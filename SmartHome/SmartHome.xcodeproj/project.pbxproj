@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040FFC5E1A787A1500809979 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FFC5D1A787A1500809979 /* SetViewController.m */; };
 		04EDB2401A773F16002F3F50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB23F1A773F16002F3F50 /* main.m */; };
 		04EDB2431A773F16002F3F50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB2421A773F16002F3F50 /* AppDelegate.m */; };
-		04EDB2461A773F16002F3F50 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB2451A773F16002F3F50 /* FirstViewController.m */; };
-		04EDB2491A773F16002F3F50 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB2481A773F16002F3F50 /* SecondViewController.m */; };
+		04EDB2461A773F16002F3F50 /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB2451A773F16002F3F50 /* RoomViewController.m */; };
+		04EDB2491A773F16002F3F50 /* SceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB2481A773F16002F3F50 /* SceneViewController.m */; };
 		04EDB24C1A773F16002F3F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24A1A773F16002F3F50 /* Main.storyboard */; };
 		04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24D1A773F16002F3F50 /* Images.xcassets */; };
 		04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */; };
@@ -28,15 +29,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040FFC5C1A787A1500809979 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		040FFC5D1A787A1500809979 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		04EDB23A1A773F16002F3F50 /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDB23E1A773F16002F3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EDB23F1A773F16002F3F50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04EDB2411A773F16002F3F50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04EDB2421A773F16002F3F50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04EDB2441A773F16002F3F50 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		04EDB2451A773F16002F3F50 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		04EDB2471A773F16002F3F50 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		04EDB2481A773F16002F3F50 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		04EDB2441A773F16002F3F50 /* RoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
+		04EDB2451A773F16002F3F50 /* RoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
+		04EDB2471A773F16002F3F50 /* SceneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneViewController.h; sourceTree = "<group>"; };
+		04EDB2481A773F16002F3F50 /* SceneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneViewController.m; sourceTree = "<group>"; };
 		04EDB24B1A773F16002F3F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04EDB24D1A773F16002F3F50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04EDB2501A773F16002F3F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -63,6 +66,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040FFC5F1A787A6000809979 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				040FFC601A787A7E00809979 /* Setting */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		040FFC601A787A7E00809979 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		04EDB2311A773F16002F3F50 = {
 			isa = PBXGroup;
 			children = (
@@ -84,12 +102,15 @@
 		04EDB23C1A773F16002F3F50 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
+				040FFC5F1A787A6000809979 /* VC */,
 				04EDB2411A773F16002F3F50 /* AppDelegate.h */,
 				04EDB2421A773F16002F3F50 /* AppDelegate.m */,
-				04EDB2441A773F16002F3F50 /* FirstViewController.h */,
-				04EDB2451A773F16002F3F50 /* FirstViewController.m */,
-				04EDB2471A773F16002F3F50 /* SecondViewController.h */,
-				04EDB2481A773F16002F3F50 /* SecondViewController.m */,
+				04EDB2441A773F16002F3F50 /* RoomViewController.h */,
+				04EDB2451A773F16002F3F50 /* RoomViewController.m */,
+				04EDB2471A773F16002F3F50 /* SceneViewController.h */,
+				04EDB2481A773F16002F3F50 /* SceneViewController.m */,
+				040FFC5C1A787A1500809979 /* SetViewController.h */,
+				040FFC5D1A787A1500809979 /* SetViewController.m */,
 				04EDB24A1A773F16002F3F50 /* Main.storyboard */,
 				04EDB24D1A773F16002F3F50 /* Images.xcassets */,
 				04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */,
@@ -224,9 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04EDB2491A773F16002F3F50 /* SecondViewController.m in Sources */,
+				04EDB2491A773F16002F3F50 /* SceneViewController.m in Sources */,
 				04EDB2431A773F16002F3F50 /* AppDelegate.m in Sources */,
-				04EDB2461A773F16002F3F50 /* FirstViewController.m in Sources */,
+				04EDB2461A773F16002F3F50 /* RoomViewController.m in Sources */,
+				040FFC5E1A787A1500809979 /* SetViewController.m in Sources */,
 				04EDB2401A773F16002F3F50 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +440,7 @@
 				04EDB2621A773F17002F3F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04EDB2631A773F17002F3F50 /* Build configuration list for PBXNativeTarget "SmartHomeTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +449,7 @@
 				04EDB2651A773F17002F3F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

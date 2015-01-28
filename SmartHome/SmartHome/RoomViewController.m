@@ -6,16 +6,18 @@
 //  Copyright (c) 2015年 renren. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "RoomViewController.h"
 
-@interface FirstViewController ()
+@interface RoomViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation RoomViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.roomScrollView.;
     // Do any additional setup after loading the view, typically from a nib.
 }
 

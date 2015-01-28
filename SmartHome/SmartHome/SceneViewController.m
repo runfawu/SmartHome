@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 renren. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SceneViewController.h"
 
-@interface SecondViewController ()
+@interface SceneViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation SceneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

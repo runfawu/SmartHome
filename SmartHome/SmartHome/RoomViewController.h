@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FirstViewController.h
 //  SmartHome
 //
 //  Created by micheal on 15/1/27.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface RoomViewController : UIViewController
 
+@property (nonatomic,strong) IBOutlet UIScrollView *roomScrollView;
 
 @end
 
