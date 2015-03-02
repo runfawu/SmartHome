@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DeviceDB.h"
+#import "Comon.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,46 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    DeviceDB *db=[DeviceDB sharedInstance];
+    [db connect];
+    BOOL isHaveTable=YES;
+    if (![db isTableExist:DEVICE_TABLE]) {
+        isHaveTable=NO;
+        NSLog(@"have table:%d",isHaveTable);
+        
+        if ([db createTable:DEVICE_TABLE values:DEVICE_TABLE_FIELD]) {
+            isHaveTable=YES;
+            NSLog(@"create feed table is od");
+        }
+    }
+    
+    NSMutableArray* fields = [[NSMutableArray alloc]init];
+    NSMutableArray* values = [[NSMutableArray alloc]init];
+//    [fields addObject:@"id"];
+    [fields addObject:@"socketId"];
+    [fields addObject:@"lightId"];
+    [fields addObject:@"deviceName"];
+    [fields addObject:@"roomId"];
+    [fields addObject:@"roomName"];
+    [fields addObject:@"state"];
+    
+//    [values addObject:[NSNumber numberWithInt:1]];
+    [values addObject:[NSNumber numberWithInt:001]];
+    [values addObject:[NSNumber numberWithInt:001]];
+    [values addObject:@"灯光01"];
+    [values addObject:[NSNumber numberWithInt:123]];
+    [values addObject:@"客厅"];
+    [values addObject:[NSNumber numberWithInt:1]];
+    
+    if(! [db insertWithTable:DEVICE_TABLE fields:fields values:values])
+    {
+        NSLog(@"health table 存储记录失败");
+    }
+    
+    int rowCount=[db queryWithTable:DEVICE_TABLE];
+    NSLog(@"current table row count:%d",rowCount);
+    
     return YES;
 }
 

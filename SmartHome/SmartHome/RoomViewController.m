@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.roomScrollView.;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
