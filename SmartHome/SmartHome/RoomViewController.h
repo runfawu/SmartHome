@@ -10,7 +10,7 @@
 
 @interface RoomViewController : UIViewController
 
-@property (nonatomic,strong) IBOutlet UIScrollView *roomScrollView;
+@property (nonatomic,weak) IBOutlet UIScrollView *roomScrollView;
 
 @end
 
