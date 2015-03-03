@@ -499,7 +499,7 @@
     
     @synchronized(self)
     {
-        NSString* query = [NSString stringWithFormat:@"select distinct count(roomName) from %@",table];
+        NSString* query = [NSString stringWithFormat:@"select count(distinct roomId) from %@",table];
         
         return [self.db intForQuery:query];
         

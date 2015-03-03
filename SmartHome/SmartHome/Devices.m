@@ -10,7 +10,7 @@
 
 @implementation Devices
 
-@synthesize inscreaseId;
+@synthesize devicesId;
 @synthesize socketId;
 @synthesize lightId;
 @synthesize roomId;

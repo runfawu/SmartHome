@@ -10,11 +10,13 @@
 
 @implementation Light
 
-@synthesize inscreaseId;
+@synthesize lightId;
 @synthesize mac;
 @synthesize networkType;
 @synthesize onTime;
 @synthesize offTime;
+@synthesize onTimeState;
+@synthesize offTimeState;
 @synthesize rgb;
 @synthesize luminance;
 @synthesize colorTemp;

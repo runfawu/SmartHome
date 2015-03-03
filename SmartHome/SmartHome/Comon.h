@@ -39,7 +39,6 @@
 
 #define LIGHT_TABLE_FIELD ({\
 [NSDictionary dictionaryWithObjectsAndKeys:\
-                            TYPE_INT, @"id",\
                             TYPE_TEXT, @"mac",\
                             TYPE_INT,@"netWorkType",\
                             TYPE_TEXT,@"onTime ",\
@@ -55,7 +54,6 @@
 
 #define SOCKET_TABLE_FIELD ({\
 [NSDictionary dictionaryWithObjectsAndKeys:\
-                            TYPE_INT, @"id",\
                             TYPE_TEXT, @"onTime",\
                             TYPE_TEXT,@"offTime",\
                             TYPE_INT, @"netWorkType",\
@@ -64,6 +62,8 @@
                             TYPE_INT,@"offTimeState",\
                             nil];\
 })
+
+
 
 
 @interface Comon : NSObject

@@ -10,7 +10,7 @@
 
 @implementation Socket
 
-@synthesize inscreaseId;
+@synthesize socketId;
 @synthesize onTime;
 @synthesize offTime;
 @synthesize networkType;

@@ -10,7 +10,7 @@
 
 @interface Socket : NSObject
 
-@property (nonatomic,assign) int inscreaseId;
+@property (nonatomic,assign) int socketId;
 @property (nonatomic,strong) NSString *onTime;  //定时开时间
 @property (nonatomic,strong) NSString *offTime; //定时关时间
 @property (nonatomic,assign) int networkType; //标识内网还是外网 0:内网 1：外网

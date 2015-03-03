@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		040FFC5E1A787A1500809979 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FFC5D1A787A1500809979 /* SetViewController.m */; };
+		0452FD291AA4454F0023E465 /* AccountSynchronousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452FD281AA4454F0023E465 /* AccountSynchronousViewController.m */; };
+		0452FD2C1AA474420023E465 /* AddHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452FD2B1AA474420023E465 /* AddHostViewController.m */; };
 		04AD62A61A81FCA40059A27A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD629C1A81FCA40059A27A /* FMDatabase.m */; };
 		04AD62A71A81FCA40059A27A /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD629E1A81FCA40059A27A /* FMDatabaseAdditions.m */; };
 		04AD62A81A81FCA40059A27A /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD62A01A81FCA40059A27A /* FMDatabasePool.m */; };
@@ -41,6 +43,10 @@
 /* Begin PBXFileReference section */
 		040FFC5C1A787A1500809979 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		040FFC5D1A787A1500809979 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		0452FD271AA4454F0023E465 /* AccountSynchronousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSynchronousViewController.h; sourceTree = "<group>"; };
+		0452FD281AA4454F0023E465 /* AccountSynchronousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSynchronousViewController.m; sourceTree = "<group>"; };
+		0452FD2A1AA474420023E465 /* AddHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHostViewController.h; sourceTree = "<group>"; };
+		0452FD2B1AA474420023E465 /* AddHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHostViewController.m; sourceTree = "<group>"; };
 		04AD629B1A81FCA40059A27A /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		04AD629C1A81FCA40059A27A /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		04AD629D1A81FCA40059A27A /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -108,6 +114,10 @@
 		040FFC601A787A7E00809979 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				0452FD271AA4454F0023E465 /* AccountSynchronousViewController.h */,
+				0452FD281AA4454F0023E465 /* AccountSynchronousViewController.m */,
+				0452FD2A1AA474420023E465 /* AddHostViewController.h */,
+				0452FD2B1AA474420023E465 /* AddHostViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -344,8 +354,10 @@
 				04AD62B11A8207460059A27A /* Light.m in Sources */,
 				04AD62EC1A831A870059A27A /* DeviceDB.m in Sources */,
 				040FFC5E1A787A1500809979 /* SetViewController.m in Sources */,
+				0452FD2C1AA474420023E465 /* AddHostViewController.m in Sources */,
 				04AD62B41A8209580059A27A /* Socket.m in Sources */,
 				04AD62A81A81FCA40059A27A /* FMDatabasePool.m in Sources */,
+				0452FD291AA4454F0023E465 /* AccountSynchronousViewController.m in Sources */,
 				04AD62A71A81FCA40059A27A /* FMDatabaseAdditions.m in Sources */,
 				04AD62EF1A835D3B0059A27A /* Comon.m in Sources */,
 				04EDB2401A773F16002F3F50 /* main.m in Sources */,

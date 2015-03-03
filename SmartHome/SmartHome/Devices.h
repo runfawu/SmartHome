@@ -10,7 +10,7 @@
 
 @interface Devices : NSObject
 
-@property (nonatomic,assign) int inscreaseId;
+@property (nonatomic,assign) int devicesId;
 @property(nonatomic,assign) int socketId; //插座id→对应Socket表的id（唯一）
 @property (nonatomic,assign) int lightId;  //灯id→对应Light表的id（唯一）
 @property (nonatomic,assign) int roomId; //房间id（不为null）
