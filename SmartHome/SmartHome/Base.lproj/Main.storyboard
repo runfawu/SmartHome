@@ -30,11 +30,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fns-0F-ZHG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="87z-IK-NeI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKV-x4-aza">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,6 +49,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" id="dTY-Ku-9sI"/>
                         <barButtonItem key="rightBarButtonItem" title="卧室" id="1Xm-3J-dCH"/>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="roomScrollView" destination="eKV-x4-aza" id="FOb-Fu-eFy"/>
                     </connections>

@@ -28,6 +28,11 @@
 		04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24D1A773F16002F3F50 /* Images.xcassets */; };
 		04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */; };
 		04EDB25D1A773F17002F3F50 /* SmartHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */; };
+		71EA5F721AA4463900543C62 /* RoomFirstLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */; };
+		71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */; };
+		71EA5F761AA4605000543C62 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F751AA4605000543C62 /* GridView.m */; };
+		71EA5F781AA4605F00543C62 /* GridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EA5F771AA4605F00543C62 /* GridView.xib */; };
+		71EA5F7B1AA46DCB00543C62 /* SwitchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F7A1AA46DCB00543C62 /* SwitchObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,14 @@
 		04EDB2561A773F17002F3F50 /* SmartHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDB25B1A773F17002F3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeTests.m; sourceTree = "<group>"; };
+		71EA5F6F1AA4463900543C62 /* RoomFirstLevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomFirstLevelController.h; sourceTree = "<group>"; };
+		71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomFirstLevelController.m; sourceTree = "<group>"; };
+		71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomFirstLevelController.xib; sourceTree = "<group>"; };
+		71EA5F741AA4605000543C62 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		71EA5F751AA4605000543C62 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
+		71EA5F771AA4605F00543C62 /* GridView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridView.xib; sourceTree = "<group>"; };
+		71EA5F791AA46DCB00543C62 /* SwitchObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchObject.h; sourceTree = "<group>"; };
+		71EA5F7A1AA46DCB00543C62 /* SwitchObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +223,7 @@
 				04EDB2421A773F16002F3F50 /* AppDelegate.m */,
 				04EDB2441A773F16002F3F50 /* RoomViewController.h */,
 				04EDB2451A773F16002F3F50 /* RoomViewController.m */,
+				71EA5F6E1AA445E200543C62 /* Room */,
 				040FFC5C1A787A1500809979 /* SetViewController.h */,
 				040FFC5D1A787A1500809979 /* SetViewController.m */,
 				04EDB24A1A773F16002F3F50 /* Main.storyboard */,
@@ -244,6 +258,21 @@
 				04EDB25B1A773F17002F3F50 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71EA5F6E1AA445E200543C62 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				71EA5F6F1AA4463900543C62 /* RoomFirstLevelController.h */,
+				71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */,
+				71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */,
+				71EA5F741AA4605000543C62 /* GridView.h */,
+				71EA5F751AA4605000543C62 /* GridView.m */,
+				71EA5F771AA4605F00543C62 /* GridView.xib */,
+				71EA5F791AA46DCB00543C62 /* SwitchObject.h */,
+				71EA5F7A1AA46DCB00543C62 /* SwitchObject.m */,
+			);
+			path = Room;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EDB24C1A773F16002F3F50 /* Main.storyboard in Resources */,
+				71EA5F781AA4605F00543C62 /* GridView.xib in Resources */,
 				04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */,
+				71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */,
 				04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,15 +380,21 @@
 				04AD62AE1A8203EE0059A27A /* Devices.m in Sources */,
 				04EDB2431A773F16002F3F50 /* AppDelegate.m in Sources */,
 				04EDB2461A773F16002F3F50 /* RoomViewController.m in Sources */,
+				71EA5F721AA4463900543C62 /* RoomFirstLevelController.m in Sources */,
 				04AD62A61A81FCA40059A27A /* FMDatabase.m in Sources */,
 				04AD62AA1A81FCA40059A27A /* FMResultSet.m in Sources */,
+				71EA5F761AA4605000543C62 /* GridView.m in Sources */,
 				04AD62B11A8207460059A27A /* Light.m in Sources */,
 				04AD62EC1A831A870059A27A /* DeviceDB.m in Sources */,
 				040FFC5E1A787A1500809979 /* SetViewController.m in Sources */,
 				0452FD2C1AA474420023E465 /* AddHostViewController.m in Sources */,
 				04AD62B41A8209580059A27A /* Socket.m in Sources */,
 				04AD62A81A81FCA40059A27A /* FMDatabasePool.m in Sources */,
+
 				0452FD291AA4454F0023E465 /* AccountSynchronousViewController.m in Sources */,
+
+				71EA5F7B1AA46DCB00543C62 /* SwitchObject.m in Sources */,
+
 				04AD62A71A81FCA40059A27A /* FMDatabaseAdditions.m in Sources */,
 				04AD62EF1A835D3B0059A27A /* Comon.m in Sources */,
 				04EDB2401A773F16002F3F50 /* main.m in Sources */,
@@ -484,6 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SmartHome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -494,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SmartHome/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
