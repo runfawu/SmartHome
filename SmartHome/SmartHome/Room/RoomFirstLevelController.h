@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class RoomFirstLevelController;
+@protocol RoomFirstLevelDelegate <NSObject>
+
+- (void)roomFirstLevelControllerAddSwitch:(RoomFirstLevelController *)aController;
+
+@end
+
 @interface RoomFirstLevelController : UIViewController
+
+@property (nonatomic, weak) id<RoomFirstLevelDelegate> delegate;
 
 @end

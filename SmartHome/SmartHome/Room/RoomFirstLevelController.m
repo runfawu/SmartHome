@@ -8,18 +8,20 @@
 
 #import "RoomFirstLevelController.h"
 #import "GridView.h"
+#import "Comon.h"
 #import "SwitchObject.h"
+#import "DeviceManageController.h"
 
 #define kGridViewTag         101
-
-static const int column = 3;
-static const int gridWith = 100;
-static const int gridHeight = 100;
+#define kColumn              3
+#define kGridWidth           SCREEN_WIDTH / kColumn
+#define kGridHeight          kGridWidth
 
 @interface RoomFirstLevelController ()<UITableViewDataSource,
                                        UITableViewDelegate,
                                        UIImagePickerControllerDelegate,
-                                       UINavigationControllerDelegate>
+                                       UINavigationControllerDelegate,
+                                       GridViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 @property (weak, nonatomic) IBOutlet UITableView *aTableView;
@@ -31,15 +33,9 @@ static const int gridHeight = 100;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self setup];
     [self addTapToImageView];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
 }
 
 #pragma mark - Private methods
@@ -47,6 +43,14 @@ static const int gridHeight = 100;
 {
     self.aTableView.backgroundColor = [UIColor purpleColor];
     self.switchArray = [NSMutableArray array];
+    
+    //初始化开关格子数据, 默认有 添加设备 这个按钮
+    SwitchObject *object = [[SwitchObject alloc] init];
+    object.switchName = @"添加设备";
+    object.switchImageName = @"main_add";
+    [self.switchArray addObject:object];
+    
+    /*
     for (int i = 0; i < 20; i ++) {
         SwitchObject *object = [[SwitchObject alloc] init];
         object.switchName = [NSString stringWithFormat:@"开关%02d",i + 1];
@@ -54,9 +58,9 @@ static const int gridHeight = 100;
         
         [self.switchArray addObject:object];
     }
+     */
     
-    SwitchObject *object = [self.switchArray lastObject];
-    object.switchName = @"添加设备";
+    
 }
 
 #pragma mark - Tap image
@@ -94,37 +98,42 @@ static const int gridHeight = 100;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int value = self.switchArray.count % column > 0 ? 1 : 0;
-    int line = (int)self.switchArray.count / column + value;
+    int value = self.switchArray.count % kColumn > 0 ? 1 : 0;
+    int line = (int)self.switchArray.count / kColumn + value;
     
-    return line * gridHeight + 10;
+    return line * kGridHeight + 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"SwitchCell";
     
+    NSLog(@"xxxxx tableView frame = %@", NSStringFromCGRect(self.aTableView.frame));
+    
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
-    
-    CGFloat contextWidth = self.aTableView.bounds.size.width;
-    CGFloat contextHeight = ((self.switchArray.count-1)/column + 1 ) * gridHeight;
-    CGFloat xGap = (contextWidth - column * gridWith) / (column + 1);
-    CGFloat yGap = (contextHeight - ((self.switchArray.count-1)/column + 1) * gridHeight) / ((self.switchArray.count-1)/column + 2);
+        
+    CGFloat contextWidth = SCREEN_WIDTH;
+    CGFloat contextHeight = ((self.switchArray.count-1)/kColumn + 1 ) * kGridHeight;
+    CGFloat xGap = (contextWidth - kColumn * kGridWidth) / (kColumn + 1);
+    CGFloat yGap = (contextHeight - ((self.switchArray.count-1)/kColumn + 1) * kGridHeight) / ((self.switchArray.count-1)/kColumn + 2);
     
     for (int i = 0; i < self.switchArray.count; i ++) {
-        CGFloat X = xGap + i % column * (gridWith + xGap);
-        CGFloat Y = yGap + i / column * (gridHeight + yGap);
+        CGFloat X = xGap + i % kColumn * (kGridWidth + xGap);
+        CGFloat Y = yGap + i / kColumn * (kGridHeight + yGap);
         
         SwitchObject *object = self.switchArray[i];
         
         GridView *gridView = [GridView getNibInstance];
-        gridView.frame = CGRectMake(X, Y, gridWith, gridHeight);
+        gridView.frame = CGRectMake(X, Y, kGridWidth, kGridHeight);
         gridView.tag = kGridViewTag + i;
         gridView.stateLabel.text = object.switchName;
-        if (i == self.switchArray.count - 1) {
-            
+        gridView.thumbnailImageView.image = [UIImage imageNamed:object.switchImageName];
+        
+        if (i == self.switchArray.count - 1) { // 添加设备 格子
+            gridView.tag = kGridOfAddDeviceTag;
+            gridView.delegate = self;
         } else {
             
         }
@@ -135,5 +144,15 @@ static const int gridHeight = 100;
     
     return cell;
 }
+
+#pragma mark - GridViewDelegate
+- (void)gridViewAddSwitch:(GridView *)gridView
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(roomFirstLevelControllerAddSwitch:)]) {
+        [self.delegate roomFirstLevelControllerAddSwitch:self];
+    }
+    
+}
+
 
 @end

@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#define SCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH     [UIScreen mainScreen].bounds.size.width
+#define kNaviHeight      64
+#define kTabBarHeight    49
+#define kGridOfAddDeviceTag   -101
+
 #define DEVICE_TABLE @"DevicesRegister"
 #define LIGHT_TABLE @"Light"
 #define SOCKET_TABLE @"Socket"

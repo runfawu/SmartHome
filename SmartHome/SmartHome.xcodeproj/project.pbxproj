@@ -28,11 +28,20 @@
 		04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24D1A773F16002F3F50 /* Images.xcassets */; };
 		04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */; };
 		04EDB25D1A773F17002F3F50 /* SmartHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */; };
+		7133D2A61AA6F1D40091479A /* DeviceManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7133D2A41AA6F1D40091479A /* DeviceManageCell.m */; };
+		7133D2A71AA6F1D40091479A /* DeviceManageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7133D2A51AA6F1D40091479A /* DeviceManageCell.xib */; };
 		71EA5F721AA4463900543C62 /* RoomFirstLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */; };
 		71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */; };
 		71EA5F761AA4605000543C62 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F751AA4605000543C62 /* GridView.m */; };
 		71EA5F781AA4605F00543C62 /* GridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EA5F771AA4605F00543C62 /* GridView.xib */; };
 		71EA5F7B1AA46DCB00543C62 /* SwitchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F7A1AA46DCB00543C62 /* SwitchObject.m */; };
+		71F381EA1AA977E0008DC5DA /* ConnectNetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F381E81AA977E0008DC5DA /* ConnectNetController.m */; };
+		71F381EB1AA977E0008DC5DA /* ConnectNetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F381E91AA977E0008DC5DA /* ConnectNetController.xib */; };
+		71F381EF1AA97D2F008DC5DA /* DeviceAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F381ED1AA97D2F008DC5DA /* DeviceAddController.m */; };
+		71F381F01AA97D2F008DC5DA /* DeviceAddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F381EE1AA97D2F008DC5DA /* DeviceAddController.xib */; };
+		71F381F31AA9B25F008DC5DA /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F381F21AA9B25F008DC5DA /* ScanViewController.m */; };
+		71FD37D21AA5B0A200B10DE5 /* DeviceManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FD37D01AA5B0A200B10DE5 /* DeviceManageController.m */; };
+		71FD37D31AA5B0A200B10DE5 /* DeviceManageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FD37D11AA5B0A200B10DE5 /* DeviceManageController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +96,9 @@
 		04EDB2561A773F17002F3F50 /* SmartHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDB25B1A773F17002F3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeTests.m; sourceTree = "<group>"; };
+		7133D2A31AA6F1D40091479A /* DeviceManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManageCell.h; sourceTree = "<group>"; };
+		7133D2A41AA6F1D40091479A /* DeviceManageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManageCell.m; sourceTree = "<group>"; };
+		7133D2A51AA6F1D40091479A /* DeviceManageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceManageCell.xib; sourceTree = "<group>"; };
 		71EA5F6F1AA4463900543C62 /* RoomFirstLevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomFirstLevelController.h; sourceTree = "<group>"; };
 		71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomFirstLevelController.m; sourceTree = "<group>"; };
 		71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomFirstLevelController.xib; sourceTree = "<group>"; };
@@ -95,6 +107,17 @@
 		71EA5F771AA4605F00543C62 /* GridView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridView.xib; sourceTree = "<group>"; };
 		71EA5F791AA46DCB00543C62 /* SwitchObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchObject.h; sourceTree = "<group>"; };
 		71EA5F7A1AA46DCB00543C62 /* SwitchObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchObject.m; sourceTree = "<group>"; };
+		71F381E71AA977E0008DC5DA /* ConnectNetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectNetController.h; sourceTree = "<group>"; };
+		71F381E81AA977E0008DC5DA /* ConnectNetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectNetController.m; sourceTree = "<group>"; };
+		71F381E91AA977E0008DC5DA /* ConnectNetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectNetController.xib; sourceTree = "<group>"; };
+		71F381EC1AA97D2F008DC5DA /* DeviceAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceAddController.h; sourceTree = "<group>"; };
+		71F381ED1AA97D2F008DC5DA /* DeviceAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceAddController.m; sourceTree = "<group>"; };
+		71F381EE1AA97D2F008DC5DA /* DeviceAddController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceAddController.xib; sourceTree = "<group>"; };
+		71F381F11AA9B25F008DC5DA /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		71F381F21AA9B25F008DC5DA /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		71FD37CF1AA5B0A200B10DE5 /* DeviceManageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManageController.h; sourceTree = "<group>"; };
+		71FD37D01AA5B0A200B10DE5 /* DeviceManageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManageController.m; sourceTree = "<group>"; };
+		71FD37D11AA5B0A200B10DE5 /* DeviceManageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceManageController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,11 +289,25 @@
 				71EA5F6F1AA4463900543C62 /* RoomFirstLevelController.h */,
 				71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */,
 				71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */,
+				71FD37CF1AA5B0A200B10DE5 /* DeviceManageController.h */,
+				71FD37D01AA5B0A200B10DE5 /* DeviceManageController.m */,
+				71FD37D11AA5B0A200B10DE5 /* DeviceManageController.xib */,
+				71F381E71AA977E0008DC5DA /* ConnectNetController.h */,
+				71F381E81AA977E0008DC5DA /* ConnectNetController.m */,
+				71F381E91AA977E0008DC5DA /* ConnectNetController.xib */,
+				71F381EC1AA97D2F008DC5DA /* DeviceAddController.h */,
+				71F381ED1AA97D2F008DC5DA /* DeviceAddController.m */,
+				71F381EE1AA97D2F008DC5DA /* DeviceAddController.xib */,
+				71F381F11AA9B25F008DC5DA /* ScanViewController.h */,
+				71F381F21AA9B25F008DC5DA /* ScanViewController.m */,
 				71EA5F741AA4605000543C62 /* GridView.h */,
 				71EA5F751AA4605000543C62 /* GridView.m */,
 				71EA5F771AA4605F00543C62 /* GridView.xib */,
 				71EA5F791AA46DCB00543C62 /* SwitchObject.h */,
 				71EA5F7A1AA46DCB00543C62 /* SwitchObject.m */,
+				7133D2A31AA6F1D40091479A /* DeviceManageCell.h */,
+				7133D2A41AA6F1D40091479A /* DeviceManageCell.m */,
+				7133D2A51AA6F1D40091479A /* DeviceManageCell.xib */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -355,10 +392,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7133D2A71AA6F1D40091479A /* DeviceManageCell.xib in Resources */,
 				04EDB24C1A773F16002F3F50 /* Main.storyboard in Resources */,
 				71EA5F781AA4605F00543C62 /* GridView.xib in Resources */,
+				71F381F01AA97D2F008DC5DA /* DeviceAddController.xib in Resources */,
+				71FD37D31AA5B0A200B10DE5 /* DeviceManageController.xib in Resources */,
 				04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */,
 				71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */,
+				71F381EB1AA977E0008DC5DA /* ConnectNetController.xib in Resources */,
 				04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +420,7 @@
 			files = (
 				04AD62AE1A8203EE0059A27A /* Devices.m in Sources */,
 				04EDB2431A773F16002F3F50 /* AppDelegate.m in Sources */,
+				7133D2A61AA6F1D40091479A /* DeviceManageCell.m in Sources */,
 				04EDB2461A773F16002F3F50 /* RoomViewController.m in Sources */,
 				71EA5F721AA4463900543C62 /* RoomFirstLevelController.m in Sources */,
 				04AD62A61A81FCA40059A27A /* FMDatabase.m in Sources */,
@@ -390,15 +432,16 @@
 				0452FD2C1AA474420023E465 /* AddHostViewController.m in Sources */,
 				04AD62B41A8209580059A27A /* Socket.m in Sources */,
 				04AD62A81A81FCA40059A27A /* FMDatabasePool.m in Sources */,
-
 				0452FD291AA4454F0023E465 /* AccountSynchronousViewController.m in Sources */,
-
 				71EA5F7B1AA46DCB00543C62 /* SwitchObject.m in Sources */,
-
+				71F381EA1AA977E0008DC5DA /* ConnectNetController.m in Sources */,
 				04AD62A71A81FCA40059A27A /* FMDatabaseAdditions.m in Sources */,
+				71FD37D21AA5B0A200B10DE5 /* DeviceManageController.m in Sources */,
+				71F381F31AA9B25F008DC5DA /* ScanViewController.m in Sources */,
 				04AD62EF1A835D3B0059A27A /* Comon.m in Sources */,
 				04EDB2401A773F16002F3F50 /* main.m in Sources */,
 				04AD62A91A81FCA40059A27A /* FMDatabaseQueue.m in Sources */,
+				71F381EF1AA97D2F008DC5DA /* DeviceAddController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

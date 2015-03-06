@@ -11,18 +11,28 @@
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="添加设备" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99x-c6-c7g">
-                    <rect key="frame" x="0.0" y="80" width="100" height="20"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JvI-QF-Fa7">
+                    <rect key="frame" x="10" y="2" width="80" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加设备" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99x-c6-c7g">
+                    <rect key="frame" x="0.0" y="82" width="100" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JvI-QF-Fa7">
-                    <rect key="frame" x="10" y="0.0" width="80" height="80"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="99x-c6-c7g" secondAttribute="bottom" id="3L8-R1-alZ"/>
+                <constraint firstAttribute="trailing" secondItem="JvI-QF-Fa7" secondAttribute="trailing" constant="10" id="FkY-YL-gSv"/>
+                <constraint firstItem="99x-c6-c7g" firstAttribute="top" secondItem="JvI-QF-Fa7" secondAttribute="bottom" id="I1H-VE-ZKP"/>
+                <constraint firstAttribute="trailing" secondItem="99x-c6-c7g" secondAttribute="trailing" id="SMM-ZT-Sw0"/>
+                <constraint firstItem="99x-c6-c7g" firstAttribute="top" secondItem="JvI-QF-Fa7" secondAttribute="bottom" id="Sqz-z9-Rx5"/>
+                <constraint firstItem="JvI-QF-Fa7" firstAttribute="leading" secondItem="eTX-xV-kc6" secondAttribute="leading" constant="10" id="TUH-3g-C3C"/>
+                <constraint firstItem="JvI-QF-Fa7" firstAttribute="top" secondItem="eTX-xV-kc6" secondAttribute="top" constant="2" id="VpU-95-lH1"/>
+                <constraint firstItem="99x-c6-c7g" firstAttribute="leading" secondItem="eTX-xV-kc6" secondAttribute="leading" id="pje-Sh-0S7"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="stateLabel" destination="99x-c6-c7g" id="Zf6-NV-dYS"/>

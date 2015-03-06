@@ -8,8 +8,10 @@
 
 #import "RoomViewController.h"
 #import "RoomFirstLevelController.h"
+#import "Comon.h"
+#import "DeviceManageController.h"
 
-@interface RoomViewController ()
+@interface RoomViewController ()<RoomFirstLevelDelegate>
 
 @property (nonatomic, strong) RoomFirstLevelController *roomFirstLevelController;
 
@@ -35,10 +37,6 @@
 }
 
 #pragma mark - Test
-#define SCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
-#define SCREEN_WIDTH     [UIScreen mainScreen].bounds.size.width
-#define kNaviHeight      64
-#define kTabBarHeight    49
 - (void)addSubviewToScrollView // iPhone5S模拟器，坐标莫名其妙
 {
     self.view.backgroundColor = [UIColor lightGrayColor];
@@ -49,10 +47,23 @@
     NSLog(@"%@.view.frame = %@", NSStringFromClass([self class]), NSStringFromCGRect(self.view.frame));
     
     self.roomFirstLevelController = [[RoomFirstLevelController alloc] initWithNibName:@"RoomFirstLevelController" bundle:nil];
-    self.roomFirstLevelController.view.frame = CGRectMake(0, 0, 320, 568 - kNaviHeight - kTabBarHeight - 88);
+    self.roomFirstLevelController.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - kNaviHeight - kTabBarHeight - 88); // 得减88 ???
+    self.roomFirstLevelController.delegate = self;
     [self.roomScrollView addSubview:self.roomFirstLevelController.view];
     
-    self.roomScrollView.contentSize = CGSizeMake(320, 568 - kNaviHeight - kTabBarHeight);
+    NSLog(@"first level frame = %@", NSStringFromCGRect(self.roomFirstLevelController.view.frame));
+    NSLog(@"first tableView height = %.2f", self.roomFirstLevelController.view.frame.size.height - 200);
+    
+    self.roomScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - kNaviHeight - kTabBarHeight);
+}
+
+#pragma mark - RoomFirstLevelDelegate
+- (void)roomFirstLevelControllerAddSwitch:(RoomFirstLevelController *)aController
+{
+    DeviceManageController *deviceManageController = [[DeviceManageController alloc] initWithNibName:@"DeviceManageController" bundle:nil];
+    deviceManageController.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:deviceManageController animated:YES];
 }
 
 @end
