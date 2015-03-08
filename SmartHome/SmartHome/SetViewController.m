@@ -7,7 +7,7 @@
 //
 
 #import "SetViewController.h"
-#import "AddViewController.h"
+//#import "AddViewController.h"
 
 @interface SetViewController ()
 
@@ -56,8 +56,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0&&indexPath.row==1) {
-        AddViewController *addVC = [[AddViewController alloc]initWithNibName:@"AddViewController" bundle:nil ];
-        [self.navigationController pushViewController:addVC animated:YES];
+//        AddViewController *addVC = [[AddViewController alloc]initWithNibName:@"AddViewController" bundle:nil ];
+//        [self.navigationController pushViewController:addVC animated:YES];
     }
 }
 
