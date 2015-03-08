@@ -7,6 +7,7 @@
 //
 
 #import "SetViewController.h"
+#import "AddViewController.h"
 
 @interface SetViewController ()
 
@@ -52,6 +53,13 @@
     return cell;
 }
 */
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0&&indexPath.row==1) {
+        AddViewController *addVC = [[AddViewController alloc]initWithNibName:@"AddViewController" bundle:nil ];
+        [self.navigationController pushViewController:addVC animated:YES];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

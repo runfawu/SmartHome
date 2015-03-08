@@ -28,7 +28,7 @@
 
 #define DEVICE_TABLE_FIELD ({\
 [NSDictionary dictionaryWithObjectsAndKeys:\
-                            TYPE_INT, @"socketId",\
+                            TYPE_INT, @"socketId ",\
                             TYPE_INT,@"lightId",\
                             TYPE_TEXT,@"deviceName",\
                             TYPE_INT, @"roomId",\
@@ -62,8 +62,6 @@
                             TYPE_INT,@"offTimeState",\
                             nil];\
 })
-
-
 
 
 @interface Comon : NSObject

@@ -18,4 +18,12 @@
 @property (nonatomic,strong) NSString *deviceName; //设备名称（唯一且不为null）
 @property (nonatomic,strong) NSString *roomName; //房间名称（不为null）
 
+-(id)initWithDevicesId:(int)devId
+           andSocketId:(int)sckId
+            andLightId:(int)ltId
+             andRoomId:(int)rmId
+              andState:(int)sta
+         andDeviceName:(NSString *)devName
+           andRoomName:(NSString *)rmName;
+
 @end

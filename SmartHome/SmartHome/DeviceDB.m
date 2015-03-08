@@ -10,6 +10,7 @@
 #import "FMDatabase.h"
 #import "FMDatabaseQueue.h"
 #import "FMDatabaseAdditions.h"
+#import "Comon.h"
 
 #define DB_name @"qinqi_smart_db.db"
 
@@ -36,7 +37,6 @@
 
 #pragma mark -
 #pragma mark life cycle
-
 -(id)init{
     self=[super init];
     if (self) {
@@ -249,6 +249,48 @@
         
         return [self.db executeUpdate:SQL withArgumentsInArray:values];
     }
+}
+
+-(BOOL)insertDevicesRegisterTableWithDevices:(Devices *)device{
+    
+    @synchronized(self)
+    {
+        
+//        NSString* fieldStr = @"";
+//        NSString* valueStr = @"";
+//        
+//        NSMutableArray* argumentsInArray = [NSMutableArray array];
+//        
+//        NSArray* keys = values.allKeys;
+//        for (int i = 0;i<keys.count-1;i++)
+//        {
+//            id key = [keys objectAtIndex:i];
+//            id value = [values objectForKey:key];
+//            
+//            NSString* tempKey = [NSString stringWithFormat:@"%@,",key];
+//            fieldStr = [NSString stringWithFormat:@"%@%@",fieldStr,tempKey];
+//            
+//            NSString* tempValue = @"?,";
+//            valueStr = [NSString stringWithFormat:@"%@%@",valueStr,tempValue];
+//            
+//            [argumentsInArray addObject:value];
+//        }
+//        
+//        id lastKey = [keys objectAtIndex:keys.count-1];
+//        id lastValue = [values objectForKey:lastKey];
+//        
+//        fieldStr = [NSString stringWithFormat:@"%@%@",fieldStr,lastKey];
+//        valueStr = [NSString stringWithFormat:@"%@?",valueStr];
+//        
+//        [argumentsInArray addObject:lastValue];
+        
+//        NSString* insertSQL = [NSString stringWithFormat:@"INSERT INTO %@ values(%d,%d,%@,%d,%@,%d)",DEVICE_TABLE,device.socketId,device.lightId,device.deviceName,dev];
+          NSString* insertSQL = [NSString stringWithFormat:@"INSERT INTO %@ values(%d,%d,'%@',%d,'%@',%d)",DEVICE_TABLE,device.socketId,device.lightId,device.deviceName,device.roomId,device.roomName,device.state];
+        
+//        return [self.db executeUpdate:insertSQL withArgumentsInArray:argumentsInArray];
+        return  [self.db executeUpdate:insertSQL,nil];
+    }
+//    return NO;
 }
 
 #pragma mark -
@@ -468,7 +510,6 @@
     return NO;
 }
 
-
 -(BOOL)deleteWithTable:(NSString *)table field:(NSString*)field value:(NSString *)value
 {
     NSParameterAssert(table && table.length > 0);
@@ -502,8 +543,29 @@
         NSString* query = [NSString stringWithFormat:@"select count(distinct roomId) from %@",table];
         
         return [self.db intForQuery:query];
-        
     }
+}
+
+-(NSArray *)getDevicesRegister{
+    __block NSMutableArray *devicesList=[NSMutableArray array];
+    
+    NSString *sql = [NSString stringWithFormat:@"select * from %@",@"DevicesRegister"];
+    
+    FMResultSet *resultSet=[self.db executeQuery:sql];
+    while ([resultSet next]) {
+        int devicesId=[resultSet intForColumn:@"_id"];
+        int socketId=[resultSet intForColumn:@"socketId"];
+        int lightId=[resultSet intForColumn:@"lightId"];
+        int roomId=[resultSet intForColumn:@"roomId"];
+        int state=[resultSet intForColumn:@"state"];
+        NSString *deviceName=[resultSet stringForColumn:@"deviceName"];
+        NSString *roomName=[resultSet stringForColumn:@"roomName"];
+        
+        Devices *device=[[Devices alloc] initWithDevicesId:devicesId andSocketId:socketId andLightId:lightId andRoomId:roomId andState:state andDeviceName:deviceName andRoomName:roomName];
+        [devicesList addObject:device];
+    }
+    return devicesList;
+
 }
 
 

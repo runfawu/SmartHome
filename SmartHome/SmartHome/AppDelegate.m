@@ -20,22 +20,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    self.orderCode=0;
+    
     DeviceDB *db=[DeviceDB sharedInstance];
     [db connect];
     BOOL isHaveTable=YES;
     if (![db isTableExist:DEVICE_TABLE]) {
         isHaveTable=NO;
-        NSLog(@"have table:%d",isHaveTable);
-        
         if ([db createTable:DEVICE_TABLE values:DEVICE_TABLE_FIELD]) {
             isHaveTable=YES;
-            NSLog(@"create feed table is od");
         }
     }
     
     NSMutableArray* fields = [[NSMutableArray alloc]init];
     NSMutableArray* values = [[NSMutableArray alloc]init];
-//    [fields addObject:@"id"];
+
     [fields addObject:@"socketId"];
     [fields addObject:@"lightId"];
     [fields addObject:@"deviceName"];
@@ -43,7 +42,6 @@
     [fields addObject:@"roomName"];
     [fields addObject:@"state"];
     
-//    [values addObject:[NSNumber numberWithInt:1]];
     [values addObject:[NSNumber numberWithInt:001]];
     [values addObject:[NSNumber numberWithInt:001]];
     [values addObject:@"灯光01"];
@@ -56,9 +54,22 @@
         NSLog(@"health table 存储记录失败");
     }
     
-    int rowCount=[db queryWithTable:DEVICE_TABLE];
-    NSLog(@"current table row count:%d",rowCount);
+    Devices *deviece=[[Devices alloc] init];
+    deviece.socketId=0;
+    deviece.lightId=5;
+    deviece.deviceName=@"jdj";
+    deviece.roomId=6;
+    deviece.roomName=@"goood";
+    deviece.state=3;
     
+    if(![db insertDevicesRegisterTableWithDevices:deviece]){
+        NSLog(@"lsjlkfkjlskldfkklsd");
+    }
+    
+    NSArray *devices=[db getDevicesRegister];
+    
+    [db deleteWithTable:@"DevicesRegister" field:@"roomId" value:@"123"];
+
     return YES;
 }
 

@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04064D841AAC060300CC1E22 /* AddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 04064D731AAC060300CC1E22 /* AddObject.m */; };
+		04064D851AAC060300CC1E22 /* AddObjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04064D751AAC060300CC1E22 /* AddObjectItem.m */; };
+		04064D861AAC060300CC1E22 /* AddObjectMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 04064D771AAC060300CC1E22 /* AddObjectMode.m */; };
+		04064D871AAC060300CC1E22 /* AddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04064D791AAC060300CC1E22 /* AddView.m */; };
+		04064D881AAC060300CC1E22 /* AddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04064D7A1AAC060300CC1E22 /* AddView.xib */; };
+		04064D891AAC060300CC1E22 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04064D7C1AAC060300CC1E22 /* AddViewController.m */; };
+		04064D8A1AAC060300CC1E22 /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04064D7D1AAC060300CC1E22 /* AddViewController.xib */; };
+		04064D8B1AAC060300CC1E22 /* AddViewSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 04064D7F1AAC060300CC1E22 /* AddViewSubview.m */; };
+		04064D8C1AAC060300CC1E22 /* AddViewSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04064D801AAC060300CC1E22 /* AddViewSubview.xib */; };
+		04064D8D1AAC060300CC1E22 /* EditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04064D821AAC060300CC1E22 /* EditView.m */; };
+		04064D8E1AAC060300CC1E22 /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04064D831AAC060300CC1E22 /* EditView.xib */; };
 		040FFC5E1A787A1500809979 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040FFC5D1A787A1500809979 /* SetViewController.m */; };
+		04447DCF1AA550D400F9564C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04447DCE1AA550D400F9564C /* SystemConfiguration.framework */; };
 		0452FD291AA4454F0023E465 /* AccountSynchronousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452FD281AA4454F0023E465 /* AccountSynchronousViewController.m */; };
 		0452FD2C1AA474420023E465 /* AddHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452FD2B1AA474420023E465 /* AddHostViewController.m */; };
 		04AD62A61A81FCA40059A27A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD629C1A81FCA40059A27A /* FMDatabase.m */; };
@@ -21,6 +33,13 @@
 		04AD62EC1A831A870059A27A /* DeviceDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD62EB1A831A870059A27A /* DeviceDB.m */; };
 		04AD62EF1A835D3B0059A27A /* Comon.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD62EE1A835D3B0059A27A /* Comon.m */; };
 		04AD62F11A83629A0059A27A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AD62F01A83629A0059A27A /* libsqlite3.0.dylib */; };
+		04E70D821AA7FB9600E171B0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E70D811AA7FB9600E171B0 /* Reachability.m */; };
+		04E70D8A1AA7FD4000E171B0 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E70D891AA7FD4000E171B0 /* Common.m */; };
+		04E70D8E1AA8017000E171B0 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E70D8D1AA8017000E171B0 /* UIView+Toast.m */; };
+		04ED02591AA6A1190034C319 /* RoomSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED02581AA6A1190034C319 /* RoomSettingViewController.m */; };
+		04ED025C1AA6A61A0034C319 /* RoomSettingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED025B1AA6A61A0034C319 /* RoomSettingCollectionViewCell.m */; };
+		04ED02661AA6DD240034C319 /* AddRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED02651AA6DD240034C319 /* AddRoom.m */; };
+		04ED02681AA6DD330034C319 /* AddRoom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04ED02671AA6DD330034C319 /* AddRoom.xib */; };
 		04EDB2401A773F16002F3F50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB23F1A773F16002F3F50 /* main.m */; };
 		04EDB2431A773F16002F3F50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB2421A773F16002F3F50 /* AppDelegate.m */; };
 		04EDB2461A773F16002F3F50 /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB2451A773F16002F3F50 /* RoomViewController.m */; };
@@ -28,6 +47,7 @@
 		04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24D1A773F16002F3F50 /* Images.xcassets */; };
 		04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */; };
 		04EDB25D1A773F17002F3F50 /* SmartHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */; };
+		04FC469D1AA93F0700A39094 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC469C1AA93F0700A39094 /* GCDAsyncUdpSocket.m */; };
 		71EA5F721AA4463900543C62 /* RoomFirstLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */; };
 		71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */; };
 		71EA5F761AA4605000543C62 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5F751AA4605000543C62 /* GridView.m */; };
@@ -46,8 +66,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04064D721AAC060300CC1E22 /* AddObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddObject.h; sourceTree = "<group>"; };
+		04064D731AAC060300CC1E22 /* AddObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddObject.m; sourceTree = "<group>"; };
+		04064D741AAC060300CC1E22 /* AddObjectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddObjectItem.h; sourceTree = "<group>"; };
+		04064D751AAC060300CC1E22 /* AddObjectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddObjectItem.m; sourceTree = "<group>"; };
+		04064D761AAC060300CC1E22 /* AddObjectMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddObjectMode.h; sourceTree = "<group>"; };
+		04064D771AAC060300CC1E22 /* AddObjectMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddObjectMode.m; sourceTree = "<group>"; };
+		04064D781AAC060300CC1E22 /* AddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddView.h; sourceTree = "<group>"; };
+		04064D791AAC060300CC1E22 /* AddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddView.m; sourceTree = "<group>"; };
+		04064D7A1AAC060300CC1E22 /* AddView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddView.xib; sourceTree = "<group>"; };
+		04064D7B1AAC060300CC1E22 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		04064D7C1AAC060300CC1E22 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		04064D7D1AAC060300CC1E22 /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		04064D7E1AAC060300CC1E22 /* AddViewSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewSubview.h; sourceTree = "<group>"; };
+		04064D7F1AAC060300CC1E22 /* AddViewSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewSubview.m; sourceTree = "<group>"; };
+		04064D801AAC060300CC1E22 /* AddViewSubview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewSubview.xib; sourceTree = "<group>"; };
+		04064D811AAC060300CC1E22 /* EditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditView.h; sourceTree = "<group>"; };
+		04064D821AAC060300CC1E22 /* EditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditView.m; sourceTree = "<group>"; };
+		04064D831AAC060300CC1E22 /* EditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
 		040FFC5C1A787A1500809979 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		040FFC5D1A787A1500809979 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		04447DCE1AA550D400F9564C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0452FD271AA4454F0023E465 /* AccountSynchronousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSynchronousViewController.h; sourceTree = "<group>"; };
 		0452FD281AA4454F0023E465 /* AccountSynchronousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSynchronousViewController.m; sourceTree = "<group>"; };
 		0452FD2A1AA474420023E465 /* AddHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHostViewController.h; sourceTree = "<group>"; };
@@ -74,6 +113,19 @@
 		04AD62ED1A835D3B0059A27A /* Comon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comon.h; sourceTree = "<group>"; };
 		04AD62EE1A835D3B0059A27A /* Comon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comon.m; sourceTree = "<group>"; };
 		04AD62F01A83629A0059A27A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		04E70D801AA7FB9600E171B0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		04E70D811AA7FB9600E171B0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		04E70D881AA7FD4000E171B0 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		04E70D891AA7FD4000E171B0 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		04E70D8C1AA8017000E171B0 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		04E70D8D1AA8017000E171B0 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		04ED02571AA6A1190034C319 /* RoomSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomSettingViewController.h; sourceTree = "<group>"; };
+		04ED02581AA6A1190034C319 /* RoomSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomSettingViewController.m; sourceTree = "<group>"; };
+		04ED025A1AA6A61A0034C319 /* RoomSettingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomSettingCollectionViewCell.h; sourceTree = "<group>"; };
+		04ED025B1AA6A61A0034C319 /* RoomSettingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomSettingCollectionViewCell.m; sourceTree = "<group>"; };
+		04ED02641AA6DD240034C319 /* AddRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRoom.h; sourceTree = "<group>"; };
+		04ED02651AA6DD240034C319 /* AddRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRoom.m; sourceTree = "<group>"; };
+		04ED02671AA6DD330034C319 /* AddRoom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRoom.xib; sourceTree = "<group>"; };
 		04EDB23A1A773F16002F3F50 /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDB23E1A773F16002F3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EDB23F1A773F16002F3F50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +139,8 @@
 		04EDB2561A773F17002F3F50 /* SmartHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDB25B1A773F17002F3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeTests.m; sourceTree = "<group>"; };
+		04FC469B1AA93F0700A39094 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		04FC469C1AA93F0700A39094 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		71EA5F6F1AA4463900543C62 /* RoomFirstLevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomFirstLevelController.h; sourceTree = "<group>"; };
 		71EA5F701AA4463900543C62 /* RoomFirstLevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomFirstLevelController.m; sourceTree = "<group>"; };
 		71EA5F711AA4463900543C62 /* RoomFirstLevelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomFirstLevelController.xib; sourceTree = "<group>"; };
@@ -102,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04447DCF1AA550D400F9564C /* SystemConfiguration.framework in Frameworks */,
 				04AD62F11A83629A0059A27A /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +171,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04064D711AAC05BB00CC1E22 /* AddRoom */ = {
+			isa = PBXGroup;
+			children = (
+				04064D721AAC060300CC1E22 /* AddObject.h */,
+				04064D731AAC060300CC1E22 /* AddObject.m */,
+				04064D741AAC060300CC1E22 /* AddObjectItem.h */,
+				04064D751AAC060300CC1E22 /* AddObjectItem.m */,
+				04064D761AAC060300CC1E22 /* AddObjectMode.h */,
+				04064D771AAC060300CC1E22 /* AddObjectMode.m */,
+				04064D781AAC060300CC1E22 /* AddView.h */,
+				04064D791AAC060300CC1E22 /* AddView.m */,
+				04064D7A1AAC060300CC1E22 /* AddView.xib */,
+				04064D7B1AAC060300CC1E22 /* AddViewController.h */,
+				04064D7C1AAC060300CC1E22 /* AddViewController.m */,
+				04064D7D1AAC060300CC1E22 /* AddViewController.xib */,
+				04064D7E1AAC060300CC1E22 /* AddViewSubview.h */,
+				04064D7F1AAC060300CC1E22 /* AddViewSubview.m */,
+				04064D801AAC060300CC1E22 /* AddViewSubview.xib */,
+				04064D811AAC060300CC1E22 /* EditView.h */,
+				04064D821AAC060300CC1E22 /* EditView.m */,
+				04064D831AAC060300CC1E22 /* EditView.xib */,
+			);
+			name = AddRoom;
+			sourceTree = "<group>";
+		};
 		040FFC5F1A787A6000809979 /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,10 +207,20 @@
 		040FFC601A787A7E00809979 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				040FFC5C1A787A1500809979 /* SetViewController.h */,
+				040FFC5D1A787A1500809979 /* SetViewController.m */,
+				04064D711AAC05BB00CC1E22 /* AddRoom */,
 				0452FD271AA4454F0023E465 /* AccountSynchronousViewController.h */,
 				0452FD281AA4454F0023E465 /* AccountSynchronousViewController.m */,
 				0452FD2A1AA474420023E465 /* AddHostViewController.h */,
 				0452FD2B1AA474420023E465 /* AddHostViewController.m */,
+				04ED02571AA6A1190034C319 /* RoomSettingViewController.h */,
+				04ED02581AA6A1190034C319 /* RoomSettingViewController.m */,
+				04ED025A1AA6A61A0034C319 /* RoomSettingCollectionViewCell.h */,
+				04ED025B1AA6A61A0034C319 /* RoomSettingCollectionViewCell.m */,
+				04ED02641AA6DD240034C319 /* AddRoom.h */,
+				04ED02651AA6DD240034C319 /* AddRoom.m */,
+				04ED02671AA6DD330034C319 /* AddRoom.xib */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -146,6 +236,9 @@
 		04AD62991A81FCA40059A27A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				04FC469A1AA93F0700A39094 /* UDP */,
+				04E70D8B1AA8017000E171B0 /* Toast */,
+				04E70D7F1AA7FB9600E171B0 /* NetWork */,
 				04AD629A1A81FCA40059A27A /* fmdb */,
 			);
 			path = Lib;
@@ -193,9 +286,37 @@
 			name = DB;
 			sourceTree = "<group>";
 		};
+		04E70D7F1AA7FB9600E171B0 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				04E70D801AA7FB9600E171B0 /* Reachability.h */,
+				04E70D811AA7FB9600E171B0 /* Reachability.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		04E70D871AA7FD2F00E171B0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				04E70D881AA7FD4000E171B0 /* Common.h */,
+				04E70D891AA7FD4000E171B0 /* Common.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		04E70D8B1AA8017000E171B0 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				04E70D8C1AA8017000E171B0 /* UIView+Toast.h */,
+				04E70D8D1AA8017000E171B0 /* UIView+Toast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		04EDB2311A773F16002F3F50 = {
 			isa = PBXGroup;
 			children = (
+				04447DCE1AA550D400F9564C /* SystemConfiguration.framework */,
 				04AD62F01A83629A0059A27A /* libsqlite3.0.dylib */,
 				04EDB23C1A773F16002F3F50 /* SmartHome */,
 				04EDB2591A773F17002F3F50 /* SmartHomeTests */,
@@ -215,6 +336,7 @@
 		04EDB23C1A773F16002F3F50 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
+				04E70D871AA7FD2F00E171B0 /* Tools */,
 				04AD62E91A8316D40059A27A /* DB */,
 				04AD62AB1A8203860059A27A /* Model */,
 				04AD62981A81FCA40059A27A /* Source */,
@@ -224,8 +346,6 @@
 				04EDB2441A773F16002F3F50 /* RoomViewController.h */,
 				04EDB2451A773F16002F3F50 /* RoomViewController.m */,
 				71EA5F6E1AA445E200543C62 /* Room */,
-				040FFC5C1A787A1500809979 /* SetViewController.h */,
-				040FFC5D1A787A1500809979 /* SetViewController.m */,
 				04EDB24A1A773F16002F3F50 /* Main.storyboard */,
 				04EDB24D1A773F16002F3F50 /* Images.xcassets */,
 				04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */,
@@ -258,6 +378,15 @@
 				04EDB25B1A773F17002F3F50 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04FC469A1AA93F0700A39094 /* UDP */ = {
+			isa = PBXGroup;
+			children = (
+				04FC469B1AA93F0700A39094 /* GCDAsyncUdpSocket.h */,
+				04FC469C1AA93F0700A39094 /* GCDAsyncUdpSocket.m */,
+			);
+			path = UDP;
 			sourceTree = "<group>";
 		};
 		71EA5F6E1AA445E200543C62 /* Room */ = {
@@ -357,8 +486,13 @@
 			files = (
 				04EDB24C1A773F16002F3F50 /* Main.storyboard in Resources */,
 				71EA5F781AA4605F00543C62 /* GridView.xib in Resources */,
+				04ED02681AA6DD330034C319 /* AddRoom.xib in Resources */,
 				04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */,
 				71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */,
+				04064D881AAC060300CC1E22 /* AddView.xib in Resources */,
+				04064D8C1AAC060300CC1E22 /* AddViewSubview.xib in Resources */,
+				04064D8A1AAC060300CC1E22 /* AddViewController.xib in Resources */,
+				04064D8E1AAC060300CC1E22 /* EditView.xib in Resources */,
 				04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,28 +511,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04ED02591AA6A1190034C319 /* RoomSettingViewController.m in Sources */,
 				04AD62AE1A8203EE0059A27A /* Devices.m in Sources */,
 				04EDB2431A773F16002F3F50 /* AppDelegate.m in Sources */,
+				04E70D8E1AA8017000E171B0 /* UIView+Toast.m in Sources */,
 				04EDB2461A773F16002F3F50 /* RoomViewController.m in Sources */,
 				71EA5F721AA4463900543C62 /* RoomFirstLevelController.m in Sources */,
 				04AD62A61A81FCA40059A27A /* FMDatabase.m in Sources */,
 				04AD62AA1A81FCA40059A27A /* FMResultSet.m in Sources */,
 				71EA5F761AA4605000543C62 /* GridView.m in Sources */,
+				04ED02661AA6DD240034C319 /* AddRoom.m in Sources */,
 				04AD62B11A8207460059A27A /* Light.m in Sources */,
 				04AD62EC1A831A870059A27A /* DeviceDB.m in Sources */,
+				04064D871AAC060300CC1E22 /* AddView.m in Sources */,
+				04064D8D1AAC060300CC1E22 /* EditView.m in Sources */,
 				040FFC5E1A787A1500809979 /* SetViewController.m in Sources */,
+				04E70D8A1AA7FD4000E171B0 /* Common.m in Sources */,
+				04ED025C1AA6A61A0034C319 /* RoomSettingCollectionViewCell.m in Sources */,
 				0452FD2C1AA474420023E465 /* AddHostViewController.m in Sources */,
 				04AD62B41A8209580059A27A /* Socket.m in Sources */,
 				04AD62A81A81FCA40059A27A /* FMDatabasePool.m in Sources */,
-
 				0452FD291AA4454F0023E465 /* AccountSynchronousViewController.m in Sources */,
-
+				04064D8B1AAC060300CC1E22 /* AddViewSubview.m in Sources */,
+				04E70D821AA7FB9600E171B0 /* Reachability.m in Sources */,
 				71EA5F7B1AA46DCB00543C62 /* SwitchObject.m in Sources */,
-
+				04064D851AAC060300CC1E22 /* AddObjectItem.m in Sources */,
+				04064D861AAC060300CC1E22 /* AddObjectMode.m in Sources */,
+				04064D891AAC060300CC1E22 /* AddViewController.m in Sources */,
 				04AD62A71A81FCA40059A27A /* FMDatabaseAdditions.m in Sources */,
 				04AD62EF1A835D3B0059A27A /* Comon.m in Sources */,
 				04EDB2401A773F16002F3F50 /* main.m in Sources */,
+				04FC469D1AA93F0700A39094 /* GCDAsyncUdpSocket.m in Sources */,
 				04AD62A91A81FCA40059A27A /* FMDatabaseQueue.m in Sources */,
+				04064D841AAC060300CC1E22 /* AddObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +602,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yi Tan (AULAKXL2EW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yi Tan (AULAKXL2EW)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -477,6 +623,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1228DF69-C25B-44BF-9F79-39B8A3713AAC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -498,7 +645,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yi Tan (AULAKXL2EW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yi Tan (AULAKXL2EW)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -511,6 +659,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "1228DF69-C25B-44BF-9F79-39B8A3713AAC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

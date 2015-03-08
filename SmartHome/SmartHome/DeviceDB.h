@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "FMResultSet.h"
+#import "Devices.h"
+#import "Light.h"
+#import "Socket.h"
 
 @class FMDatabaseQueue;
 
@@ -78,6 +81,15 @@
 
 -(BOOL)insertWithTable:(NSString*)tableName fields:(NSArray*)fields values:(NSArray*)values;
 
+/**
+ * @brief 插入数据到表单
+ *
+ * @param table 表名
+ * @param values 列名及列对应的值   field1 value1, field2 value2, ...
+ * @return 成功／失败
+ */
+-(BOOL)insertDevicesRegisterTableWithDevices:(Devices *)device;
+
 //查
 /**
  * @brief 查找表单数据 （field1 ＝ value1 And field2 ＝ value2 And ...）
@@ -139,6 +151,10 @@
  * @param table 表名
  **/
 -(int)queryWithTable:(NSString *)table;
+
+//获取房间数量
+-(NSArray *)getDevicesRegister;
+
 
 
 @end

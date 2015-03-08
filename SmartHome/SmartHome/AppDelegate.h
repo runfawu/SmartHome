@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+//顺序码
+@property (nonatomic) NSInteger orderCode;
 
 @end
 

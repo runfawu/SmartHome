@@ -7,48 +7,168 @@
 //
 
 #import "AddHostViewController.h"
+#import "Common.h"
+#import "Reachability.h"
+#import "UIView+Toast.h"
 
-@interface AddHostViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface AddHostViewController ()
+
+@property (nonatomic) Reachability *wifiReachability;
 
 @end
 
 @implementation AddHostViewController
 
+@synthesize wifiName;
+@synthesize wifiPassword;
+@synthesize configureNetWorkButton;
+
+@synthesize socket;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.linkedView.layer.cornerRadius=8.0;
-    self.linkedView.layer.borderColor=[UIColor grayColor].CGColor;
-    self.linkedView.layer.borderWidth=1;
+    self.configureNetWorkButton.layer.cornerRadius=8.0;
+    self.configureNetWorkButton.layer.borderWidth=1.0;
+    self.configureNetWorkButton.layer.borderColor=[UIColor grayColor].CGColor;
     
-    self.hostTableView.layer.cornerRadius=8.0;
-    self.hostTableView.layer.borderWidth=1.0;
-    self.hostTableView.layer.borderColor=[UIColor grayColor].CGColor;
+    self.wifiName.borderStyle=UITextBorderStyleNone;
+
+    self.wifiPassword.borderStyle=UITextBorderStyleNone;
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    
+    self.wifiReachability=[Reachability reachabilityForLocalWiFi];
+    [self.wifiReachability startNotifier];
+    [self updateInterfaceWithReachability:self.wifiReachability];
+    
+    //连接socket
+    [self socketConnect];
     
     // Do any additional setup after loading the view.
 }
 
+/*!
+ * Called by Reachability whenever status changes.
+ */
+- (void) reachabilityChanged:(NSNotification *)note
+{
+    Reachability* curReach = [note object];
+    NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
+    [self updateInterfaceWithReachability:curReach];
+}
+
+- (void)updateInterfaceWithReachability:(Reachability *)reachability
+{
+    NetworkStatus netStatus = [reachability currentReachabilityStatus];
+    NSDictionary *wifiDic;
+    switch (netStatus) {
+        case ReachableViaWiFi:
+            wifiDic=[Common fetchSSIDInfo];
+            self.wifiName.text=[wifiDic objectForKey:@"SSID"];
+            
+            break;
+        default:
+            [self.view makeToast:@"当前网络环境不在WiFi环境下，请连接WiFi" duration:2.0 position:CSToastPositionCenter];
+            
+            break;
+    }
+}
+
+//配置控制码
+-(NSMutableData *)configureControlCode{
+    NSMutableData *controlCodeData=[NSMutableData data];
+    //命令识别码
+    Byte orderByte[]={0xD1};
+    NSData *ordeData=[NSData dataWithBytes:orderByte length:1];
+    //Wifi 名称
+    NSData *apNameData=[Common hexBytesWithString:self.wifiName.text];
+    //中间
+    Byte midleByte[]={0x0d};
+    NSData *midleData=[NSData dataWithBytes:midleByte length:1];
+    //Wifi 密码
+    NSData *apPwData=[Common hexBytesWithString:self.wifiPassword.text];
+    [controlCodeData appendData:ordeData];
+    [controlCodeData appendData:apNameData];
+    [controlCodeData appendData:midleData];
+    [controlCodeData appendData:apPwData];
+    
+    return controlCodeData;
+}
+
+//开始配置网络
+-(IBAction)configureNetWork:(id)sender{
+    //判断密码和网络环境
+    if (self.wifiPassword.text.length>0) {
+        NetworkStatus netStatus=[[Reachability reachabilityForLocalWiFi] currentReachabilityStatus];
+        switch (netStatus) {
+            case ReachableViaWiFi:
+                [self configureControlCode];
+                break;
+            default:
+                [self.view makeToast:@"当前网络环境不在WiFi环境下，请连接WiFi" duration:2.0 position:CSToastPositionCenter];
+                
+                break;
+        }
+    }else{
+        
+    }
+}
+
+-(void)socketConnect{
+    if (self.socket==nil) {
+        GCDAsyncUdpSocket *udpSocket=[[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+        self.socket=udpSocket;
+        udpSocket=nil;
+    }
+    NSError *error=nil;
+    //实现服务器发送的消息
+    if (![self.socket bindToPort:0 error:&error]) {
+        NSLog(@"Error binding:%@",error);
+        return;
+    }
+    if (![self.socket beginReceiving:&error]) {
+        NSLog(@"Error receiving:%@",error);
+        return;
+    }
+}
 
 #pragma mark -
-#pragma mark TableViewDelegate
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+#pragma mark UDPSocket Delegate
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
+{
+    // You could add checks here
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didNotSendDataWithTag:(long)tag dueToError:(NSError *)error
+{
+    // You could add checks here
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    return cell;
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data
+      fromAddress:(NSData *)address
+withFilterContext:(id)filterContext
+{
+//    NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    if (msg)
+//    {
+//        [self logMessage:FORMAT(@"RECV: %@", msg)];
+//    }
+//    else
+//    {
+//        NSString *host = nil;
+//        uint16_t port = 0;
+//        [GCDAsyncUdpSocket getHost:&host port:&port fromAddress:address];
+//        
+//        [self logInfo:FORMAT(@"RECV: Unknown message from: %@:%hu", host, port)];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
     // Dispose of any resources that can be recreated.
 }
 

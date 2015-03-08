@@ -7,14 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GCDAsyncUdpSocket.h"
 
-@interface AddHostViewController : UIViewController
+@interface AddHostViewController : UIViewController{
+    
+}
 
-@property (nonatomic,strong) IBOutlet UIView *linkedView;
-@property (nonatomic,strong) IBOutlet UILabel *linkedNameLabel;
-@property (nonatomic,strong) IBOutlet UILabel *linkedNoticeLabel;
+@property (nonatomic,strong) IBOutlet UITextField *wifiName;
+@property (nonatomic,strong) IBOutlet UITextField *wifiPassword;
 
-@property (nonatomic,strong) IBOutlet UITableView *hostTableView;
+@property (nonatomic,strong) IBOutlet UIButton *configureNetWorkButton;
+
+@property (nonatomic,strong) GCDAsyncUdpSocket *socket;
+
+-(IBAction)configureNetWork:(id)sender;
 
 
 @end
