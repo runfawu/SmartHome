@@ -37,6 +37,14 @@
 		04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24D1A773F16002F3F50 /* Images.xcassets */; };
 		04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */; };
 		04EDB25D1A773F17002F3F50 /* SmartHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */; };
+		04EF4DD81AAD92DA00CD971D /* AddRoomEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF4DCA1AAD92DA00CD971D /* AddRoomEditView.m */; };
+		04EF4DD91AAD92DA00CD971D /* AddRoomEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF4DCB1AAD92DA00CD971D /* AddRoomEditView.xib */; };
+		04EF4DDA1AAD92DA00CD971D /* AddRoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF4DCD1AAD92DA00CD971D /* AddRoomView.m */; };
+		04EF4DDB1AAD92DA00CD971D /* AddRoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF4DCE1AAD92DA00CD971D /* AddRoomView.xib */; };
+		04EF4DDC1AAD92DA00CD971D /* AddRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF4DD01AAD92DA00CD971D /* AddRoomViewController.m */; };
+		04EF4DDD1AAD92DA00CD971D /* AddRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF4DD11AAD92DA00CD971D /* AddRoomViewController.xib */; };
+		04EF4DDE1AAD92DA00CD971D /* AddRoomViewSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EF4DD31AAD92DA00CD971D /* AddRoomViewSubview.m */; };
+		04EF4DDF1AAD92DA00CD971D /* AddRoomViewSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EF4DD41AAD92DA00CD971D /* AddRoomViewSubview.xib */; };
 		04FC469D1AA93F0700A39094 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FC469C1AA93F0700A39094 /* GCDAsyncUdpSocket.m */; };
 		7133D2A61AA6F1D40091479A /* DeviceManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7133D2A41AA6F1D40091479A /* DeviceManageCell.m */; };
 		7133D2A71AA6F1D40091479A /* DeviceManageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7133D2A51AA6F1D40091479A /* DeviceManageCell.xib */; };
@@ -119,6 +127,18 @@
 		04EDB2561A773F17002F3F50 /* SmartHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDB25B1A773F17002F3F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EDB25C1A773F17002F3F50 /* SmartHomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomeTests.m; sourceTree = "<group>"; };
+		04EF4DC91AAD92DA00CD971D /* AddRoomEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRoomEditView.h; sourceTree = "<group>"; };
+		04EF4DCA1AAD92DA00CD971D /* AddRoomEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRoomEditView.m; sourceTree = "<group>"; };
+		04EF4DCB1AAD92DA00CD971D /* AddRoomEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRoomEditView.xib; sourceTree = "<group>"; };
+		04EF4DCC1AAD92DA00CD971D /* AddRoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRoomView.h; sourceTree = "<group>"; };
+		04EF4DCD1AAD92DA00CD971D /* AddRoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRoomView.m; sourceTree = "<group>"; };
+		04EF4DCE1AAD92DA00CD971D /* AddRoomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRoomView.xib; sourceTree = "<group>"; };
+		04EF4DCF1AAD92DA00CD971D /* AddRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRoomViewController.h; sourceTree = "<group>"; };
+		04EF4DD01AAD92DA00CD971D /* AddRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRoomViewController.m; sourceTree = "<group>"; };
+		04EF4DD11AAD92DA00CD971D /* AddRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRoomViewController.xib; sourceTree = "<group>"; };
+		04EF4DD21AAD92DA00CD971D /* AddRoomViewSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRoomViewSubview.h; sourceTree = "<group>"; };
+		04EF4DD31AAD92DA00CD971D /* AddRoomViewSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRoomViewSubview.m; sourceTree = "<group>"; };
+		04EF4DD41AAD92DA00CD971D /* AddRoomViewSubview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRoomViewSubview.xib; sourceTree = "<group>"; };
 		04FC469B1AA93F0700A39094 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		04FC469C1AA93F0700A39094 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		7133D2A31AA6F1D40091479A /* DeviceManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManageCell.h; sourceTree = "<group>"; };
@@ -176,6 +196,7 @@
 		040FFC601A787A7E00809979 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				04EF4DC21AAD92DA00CD971D /* AddRoom */,
 				040FFC5C1A787A1500809979 /* SetViewController.h */,
 				040FFC5D1A787A1500809979 /* SetViewController.m */,
 				0452FD271AA4454F0023E465 /* AccountSynchronousViewController.h */,
@@ -348,6 +369,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		04EF4DC21AAD92DA00CD971D /* AddRoom */ = {
+			isa = PBXGroup;
+			children = (
+				04EF4DC91AAD92DA00CD971D /* AddRoomEditView.h */,
+				04EF4DCA1AAD92DA00CD971D /* AddRoomEditView.m */,
+				04EF4DCB1AAD92DA00CD971D /* AddRoomEditView.xib */,
+				04EF4DCC1AAD92DA00CD971D /* AddRoomView.h */,
+				04EF4DCD1AAD92DA00CD971D /* AddRoomView.m */,
+				04EF4DCE1AAD92DA00CD971D /* AddRoomView.xib */,
+				04EF4DCF1AAD92DA00CD971D /* AddRoomViewController.h */,
+				04EF4DD01AAD92DA00CD971D /* AddRoomViewController.m */,
+				04EF4DD11AAD92DA00CD971D /* AddRoomViewController.xib */,
+				04EF4DD21AAD92DA00CD971D /* AddRoomViewSubview.h */,
+				04EF4DD31AAD92DA00CD971D /* AddRoomViewSubview.m */,
+				04EF4DD41AAD92DA00CD971D /* AddRoomViewSubview.xib */,
+			);
+			path = AddRoom;
+			sourceTree = "<group>";
+		};
 		04FC469A1AA93F0700A39094 /* UDP */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +511,7 @@
 				71EA5F781AA4605F00543C62 /* GridView.xib in Resources */,
 				04ED02681AA6DD330034C319 /* AddRoom.xib in Resources */,
 				04EDB2511A773F16002F3F50 /* LaunchScreen.xib in Resources */,
+				04EF4DDD1AAD92DA00CD971D /* AddRoomViewController.xib in Resources */,
 				71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */,
 				71F381F01AA97D2F008DC5DA /* DeviceAddController.xib in Resources */,
 				71FD37D31AA5B0A200B10DE5 /* DeviceManageController.xib in Resources */,
@@ -478,6 +519,9 @@
 				71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */,
 				71F381EB1AA977E0008DC5DA /* ConnectNetController.xib in Resources */,
 				04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */,
+				04EF4DDF1AAD92DA00CD971D /* AddRoomViewSubview.xib in Resources */,
+				04EF4DD91AAD92DA00CD971D /* AddRoomEditView.xib in Resources */,
+				04EF4DDB1AAD92DA00CD971D /* AddRoomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +549,7 @@
 				71EA5F721AA4463900543C62 /* RoomFirstLevelController.m in Sources */,
 				04AD62A61A81FCA40059A27A /* FMDatabase.m in Sources */,
 				04AD62AA1A81FCA40059A27A /* FMResultSet.m in Sources */,
+				04EF4DD81AAD92DA00CD971D /* AddRoomEditView.m in Sources */,
 				71EA5F761AA4605000543C62 /* GridView.m in Sources */,
 				04ED02661AA6DD240034C319 /* AddRoom.m in Sources */,
 				04AD62B11A8207460059A27A /* Light.m in Sources */,
@@ -514,18 +559,21 @@
 				04ED025C1AA6A61A0034C319 /* RoomSettingCollectionViewCell.m in Sources */,
 				0452FD2C1AA474420023E465 /* AddHostViewController.m in Sources */,
 				04AD62B41A8209580059A27A /* Socket.m in Sources */,
+				04EF4DDC1AAD92DA00CD971D /* AddRoomViewController.m in Sources */,
 				04AD62A81A81FCA40059A27A /* FMDatabasePool.m in Sources */,
 				0452FD291AA4454F0023E465 /* AccountSynchronousViewController.m in Sources */,
 				04E70D821AA7FB9600E171B0 /* Reachability.m in Sources */,
 				71F381EA1AA977E0008DC5DA /* ConnectNetController.m in Sources */,
 				04AD62A71A81FCA40059A27A /* FMDatabaseAdditions.m in Sources */,
 				71FD37D21AA5B0A200B10DE5 /* DeviceManageController.m in Sources */,
+				04EF4DDA1AAD92DA00CD971D /* AddRoomView.m in Sources */,
 				71F381F31AA9B25F008DC5DA /* ScanViewController.m in Sources */,
 				04AD62EF1A835D3B0059A27A /* Comon.m in Sources */,
 				04EDB2401A773F16002F3F50 /* main.m in Sources */,
 				04FC469D1AA93F0700A39094 /* GCDAsyncUdpSocket.m in Sources */,
 				04AD62A91A81FCA40059A27A /* FMDatabaseQueue.m in Sources */,
 				71F381EF1AA97D2F008DC5DA /* DeviceAddController.m in Sources */,
+				04EF4DDE1AAD92DA00CD971D /* AddRoomViewSubview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

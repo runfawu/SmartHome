@@ -11,29 +11,25 @@
 #import "Comon.h"
 #import "Common.h"
 
+
 @interface AppDelegate ()
 
 @end
-
 @implementation AppDelegate
 
+@synthesize orderCode;
+@synthesize roomID;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    NSString *macStr=@"01ffffff";
-    
-    NSData *kkkk=[Common hexBytesWithOriginMacString:macStr];
-    NSLog(@"kkkk length:%d",[kkkk length]);
-    
-    uint8_t *bytes=(uint8_t *)[kkkk bytes];
-    for (int i=0; i<[kkkk length]; i++) {
-        NSLog(@"current value:%d",bytes[i]);
-    }
-
     //顺序码
     self.orderCode=0;
+    //RoomId
+    self.roomID=100;
     
+    
+    //数据库创建表
     DeviceDB *db=[DeviceDB sharedInstance];
     [db connect];
     BOOL isHaveTable=YES;
@@ -44,64 +40,47 @@
         }
     }
     
-    NSMutableArray* fields = [[NSMutableArray alloc]init];
-    NSMutableArray* values = [[NSMutableArray alloc]init];
+    NSMutableArray *deviceFields = [[NSMutableArray alloc]init];
+    NSMutableArray *deviceValues = [[NSMutableArray alloc]init];
 
-    [fields addObject:@"socketId"];
-    [fields addObject:@"lightId"];
-    [fields addObject:@"deviceName"];
-    [fields addObject:@"roomId"];
-    [fields addObject:@"roomName"];
-    [fields addObject:@"state"];
-    
-    [values addObject:[NSNumber numberWithInt:001]];
-    [values addObject:[NSNumber numberWithInt:001]];
-    [values addObject:@"灯光01"];
-    [values addObject:[NSNumber numberWithInt:123]];
-    [values addObject:@"客厅"];
-    [values addObject:[NSNumber numberWithInt:1]];
-    
-    if(! [db insertWithTable:DEVICE_TABLE fields:fields values:values])
+    [deviceFields addObject:@"roomId"];
+    [deviceFields addObject:@"roomName"];
+
+    [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+    [deviceValues addObject:@"客厅"];
+    if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
     {
         NSLog(@"health table 存储记录失败");
+    }else{
+        self.roomID+=1;
     }
     
-    Devices *deviece=[[Devices alloc] init];
-    deviece.socketId=0;
-    deviece.lightId=5;
-    deviece.deviceName=@"jdj";
-    deviece.roomId=6;
-    deviece.roomName=@"goood";
-    deviece.state=3;
+    [deviceValues removeAllObjects];
+    [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+    [deviceValues addObject:@"厨房"];
     
-    if(![db insertDevicesRegisterTableWithDevices:deviece]){
-        NSLog(@"lsjlkfkjlskldfkklsd");
+    if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+    {
+        NSLog(@"health table 存储记录失败");
+    }else{
+        self.roomID+=1;
     }
     
-    NSArray *devices=[db getDevicesRegister];
+    [deviceValues removeAllObjects];
+    [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+    [deviceValues addObject:@"卧室"];
     
-    [db deleteWithTable:@"DevicesRegister" field:@"roomId" value:@"123"];
-
+    if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+    {
+        NSLog(@"health table 存储记录失败");
+    }else{
+        self.roomID+=1;
+        NSLog(@"current roomID=%d",self.roomID);
+    }
+    
     return YES;
 }
 
-//+ (NSData*) toBytes: (NSString*) aString
-//{
-//    NSUInteger size = [aString length];
-//    NSMutableData *bytes = [NSMutableData dataWithLength: size / 2];
-//    // Get a pointer to the actual array of bytes
-//    uint8_t* bytePtr = [bytes mutableBytes];
-//    NSUInteger i = 0;
-//    // NB your code had a bug in that an exception is thrown if size is odd
-//    for (NSUInteger j = 0 ; j < size / 2 ; ++j)
-//    {
-//        bytePtr[j] = (([aString characterAtIndex: i] & 0xf) << 4)
-//        | ([aString characterAtIndex: i + 1] & 0xf);
-//        i += 2;
-//    }
-//    // NSMutableData is a subclass of NSData, so return it directly.
-//    return bytes;
-//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

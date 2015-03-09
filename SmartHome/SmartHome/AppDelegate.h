@@ -15,5 +15,8 @@
 //顺序码
 @property (nonatomic) NSInteger orderCode;
 
+//房间ID
+@property (nonatomic,assign) NSInteger roomID;
+
 @end
 
