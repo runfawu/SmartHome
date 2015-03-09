@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "Reachability.h"
 #import "UIView+Toast.h"
+#import "AppDelegate.h"
 
 @interface AddHostViewController ()
 
@@ -24,9 +25,14 @@
 @synthesize configureNetWorkButton;
 
 @synthesize socket;
+@synthesize uartData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.uartData=[NSMutableData data];
+    //添加开始符
+    [self.uartData appendData:[Common getBeginCode]];
     
     self.configureNetWorkButton.layer.cornerRadius=8.0;
     self.configureNetWorkButton.layer.borderWidth=1.0;
@@ -104,7 +110,8 @@
         NetworkStatus netStatus=[[Reachability reachabilityForLocalWiFi] currentReachabilityStatus];
         switch (netStatus) {
             case ReachableViaWiFi:
-                [self configureControlCode];
+                [self createUARTByte];
+                [self.socket sendData:self.uartData toHost:[Common localWiFiIPAddress] port:9527 withTimeout:-1 tag:1];
                 break;
             default:
                 [self.view makeToast:@"当前网络环境不在WiFi环境下，请连接WiFi" duration:2.0 position:CSToastPositionCenter];
@@ -114,6 +121,52 @@
     }else{
         
     }
+}
+
+-(void)createUARTByte{
+    //获取控制码
+    NSMutableData *controlCodeData=[self configureControlCode];
+    //获取长度
+    NSInteger uartLength=11+[controlCodeData length];
+    Byte lengthByte[1];
+    lengthByte[0]=uartLength;
+    //添加长度
+    NSData *lengthData=[NSData dataWithBytes:lengthByte length:1];
+    //目标Mac
+    NSData *targetMacData=[Common hexBytesWithOriginMacString:@"01ffffff"];
+    //源Mac
+    NSString *currentTime=[Common getCurrentTime];
+    NSData *originMacData=[Common hexBytesWithOriginMacString:currentTime];
+    
+    //信息码
+    NSData *infoCodeData=[Common getInfomationCode];
+    //顺序码
+    Byte orderByte[1];
+    AppDelegate *delegate =[[UIApplication sharedApplication] delegate];
+    orderByte[0]=delegate.orderCode;
+    delegate.orderCode+=1;
+    if (delegate.orderCode>255) {
+        delegate.orderCode=0;
+    }
+    
+    NSData *orderCodeData=[NSData dataWithBytes:orderByte length:1];
+    
+    [self.uartData appendData:lengthData];
+    [self.uartData appendData:targetMacData];
+    [self.uartData appendData:originMacData];
+    [self.uartData appendData:infoCodeData];
+    [self.uartData appendData:orderCodeData];
+    [self.uartData appendData:controlCodeData];
+    
+    //获取验证码
+    Byte checkCode[1];
+    uint8_t *bytes=(uint8_t *)[self.uartData bytes];
+    for (int i=2; i<[self.uartData length]-1; i++) {
+        checkCode[0]=(Byte)(checkCode[0] +bytes[i]);
+    }
+    //封装完byte数组
+    NSData *checkCodeData=[NSData dataWithBytes:checkCode length:1];
+    [self.uartData appendData:checkCodeData];
 }
 
 -(void)socketConnect{

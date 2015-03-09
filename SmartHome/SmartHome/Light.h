@@ -17,9 +17,22 @@
 @property (nonatomic,strong) NSString *offTime; //定时关时间
 @property (nonatomic,assign) int onTimeState;  //开启电源开关状态,0关闭，1开启
 @property (nonatomic,assign) int offTimeState;  //关闭电源开关状态,0关闭，1开启
-@property (nonatomic,assign) int *rgb;  //RGB的值
+@property (nonatomic,assign) int rgb;  //RGB的值
 @property (nonatomic,assign) int luminance;  //亮度值
 @property (nonatomic,assign) int colorTemp;  //色温值
 @property (nonatomic,assign) int mode;  //灯光模式
+
+-(id)initWithLightId:(int)ltId
+              andMac:(NSString *)mac
+                 andNetworkType:(int)nkType
+           andOnTime:(NSString *)ontime
+          andOffTime:(NSString *)offtime
+      andOnTimeState:(int)onState
+     andOffTimeState:(int)offState
+              andRGB:(int)rgb
+        andLuminance:(int)luminance
+        andColorTemp:(int)colorTemp
+             andMode:(int)mode;
+
 
 @end

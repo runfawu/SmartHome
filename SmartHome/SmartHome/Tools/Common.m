@@ -70,18 +70,25 @@
 }
 
 
-+(NSArray *)getCurrentTime{
++(NSString *)getCurrentTime{
     NSDate *date=[NSDate date];
+    NSMutableString *timeStr=[NSMutableString string];
     
     NSCalendar *cal=[NSCalendar currentCalendar];
     unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit |NSSecondCalendarUnit;
     NSDateComponents *dd = [cal components:unitFlags fromDate:date];
     
-    int hour=[dd hour];
-    int min=[dd minute];
-    int sec=[dd second];
+    NSString *hour= [self ToHex:[dd hour]];
+    NSString *min=[self ToHex:[dd minute]];
+    NSString *sec=[self ToHex:[dd second]];
     
-    return [NSArray arrayWithObjects:[NSNumber numberWithInt:hour],[NSNumber numberWithInt:min],[NSNumber numberWithInt:sec],nil];
+    [timeStr appendString:@"02"];
+    [timeStr appendString:hour];
+    [timeStr appendString:min];
+    [timeStr appendString:sec];
+    
+//    return [NSArray arrayWithObjects:hour,min,sec,nil];
+    return timeStr;
 }
 
 
@@ -137,26 +144,29 @@
             int_ch1 = (hex_char1-87)*16; //// a 的Ascll - 97
         i++;
         
-//        if(i>=[hexString length]){
+        if(i>=[hexString length]){
 //            break;
-//        }
-        unichar hex_char2 = [hexString characterAtIndex:i]; ///两位16进制数中的第二位(低位)
-        int int_ch2;
-        if(hex_char2 >= '0' && hex_char2 <='9')
-            int_ch2 = (hex_char2-48); //// 0 的Ascll - 48
-        else if(hex_char2 >= 'A' && hex_char2 <='F')
-            int_ch2 = hex_char2-55; //// A 的Ascll - 65
-        else
-            int_ch2 = hex_char2-87; //// a 的Ascll - 97
+        }else{
+            unichar hex_char2 = [hexString characterAtIndex:i]; ///两位16进制数中的第二位(低位)
+            int int_ch2;
+            if(hex_char2 >= '0' && hex_char2 <='9')
+                int_ch2 = (hex_char2-48); //// 0 的Ascll - 48
+            else if(hex_char2 >= 'A' && hex_char2 <='F')
+                int_ch2 = hex_char2-55; //// A 的Ascll - 65
+            else
+                int_ch2 = hex_char2-87; //// a 的Ascll - 97
+            
+            int_ch = int_ch1+int_ch2;
+            NSLog(@"int_ch=%d",int_ch);
+            bytes[j] = int_ch; //将转化后的数放入Byte数组里
+            j++;
+        }
         
-        int_ch = int_ch1+int_ch2;
-        NSLog(@"int_ch=%d",int_ch);
-        bytes[j] = int_ch; //将转化后的数放入Byte数组里
-        j++;
     }
     return [NSData dataWithBytes:bytes length:4];
 }
 
+//字符串->Byte数组
 +(NSData *)hexBytesWithString:(NSString *)hexString{
     NSData *data=[hexString dataUsingEncoding:NSUTF8StringEncoding];
     return data;
@@ -171,10 +181,12 @@
     return beginData;
 }
 
-//+(NSData *)getTargetMac{
-//    Byte macByte[]={01,ff,ff};
-//}
+//目标Mac
++(NSData *)getTargetMac:(NSString *)targetMac{
+    return [self hexBytesWithString:targetMac];
+}
 
+//信息码
 +(NSData *)getInfomationCode{
     Byte infoByte[]={0x80};
     NSData *infoData=[NSData dataWithBytes:infoByte length:1];

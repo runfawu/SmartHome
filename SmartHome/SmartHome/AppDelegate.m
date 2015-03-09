@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DeviceDB.h"
 #import "Comon.h"
+#import "Common.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    NSString *macStr=@"01ffffff";
+    
+    NSData *kkkk=[Common hexBytesWithOriginMacString:macStr];
+    NSLog(@"kkkk length:%d",[kkkk length]);
+    
+    uint8_t *bytes=(uint8_t *)[kkkk bytes];
+    for (int i=0; i<[kkkk length]; i++) {
+        NSLog(@"current value:%d",bytes[i]);
+    }
+
+    //顺序码
     self.orderCode=0;
     
     DeviceDB *db=[DeviceDB sharedInstance];
@@ -72,6 +84,24 @@
 
     return YES;
 }
+
+//+ (NSData*) toBytes: (NSString*) aString
+//{
+//    NSUInteger size = [aString length];
+//    NSMutableData *bytes = [NSMutableData dataWithLength: size / 2];
+//    // Get a pointer to the actual array of bytes
+//    uint8_t* bytePtr = [bytes mutableBytes];
+//    NSUInteger i = 0;
+//    // NB your code had a bug in that an exception is thrown if size is odd
+//    for (NSUInteger j = 0 ; j < size / 2 ; ++j)
+//    {
+//        bytePtr[j] = (([aString characterAtIndex: i] & 0xf) << 4)
+//        | ([aString characterAtIndex: i + 1] & 0xf);
+//        i += 2;
+//    }
+//    // NSMutableData is a subclass of NSData, so return it directly.
+//    return bytes;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

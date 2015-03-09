@@ -20,7 +20,7 @@
 + (NSString *)localWiFiIPAddress;
 
 //获取当前时间 时、分、秒
-+(NSArray *)getCurrentTime;
++(NSString *)getCurrentTime;
 
 //将十进制转化为十六进制
 +(NSString *)ToHex:(uint16_t)tmpid;
@@ -40,7 +40,7 @@
 /**
  *配置网络、数据同步、下载数据 目标Mac
  **/
-+(NSData *)getTargetMac;
++(NSData *)getTargetMac:(NSString *)targetMac;
 
 //信息码
 +(NSData *)getInfomationCode;

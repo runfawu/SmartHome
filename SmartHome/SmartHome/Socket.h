@@ -18,4 +18,13 @@
 @property (nonatomic,assign) int onTimeState;  //开启电源开关状态 0关闭，1开启
 @property (nonatomic,assign) int offTimeState; //关闭电源开关状态
 
+-(id)initWithSocketId:(int)skId
+           andOnTime:(NSString *)ontime
+          andOffTime:(NSString *)offtime
+       andNetworkType:(int)nkType
+               andMac:(NSString *)mac
+      andOnTimeState:(int)onState
+      andOffTimeState:(int)offState;
+
+
 @end

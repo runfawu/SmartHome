@@ -20,6 +20,8 @@
 
 @property (nonatomic,strong) GCDAsyncUdpSocket *socket;
 
+@property (nonatomic,strong) NSMutableData *uartData;
+
 -(IBAction)configureNetWork:(id)sender;
 
 
