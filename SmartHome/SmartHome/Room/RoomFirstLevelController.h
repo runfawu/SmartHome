@@ -12,11 +12,13 @@
 @protocol RoomFirstLevelDelegate <NSObject>
 
 - (void)roomFirstLevelControllerAddSwitch:(RoomFirstLevelController *)aController;
+- (void)roomFirstLevelControllerLongPress:(RoomFirstLevelController *)aController;
 
 @end
 
 @interface RoomFirstLevelController : UIViewController
 
 @property (nonatomic, weak) id<RoomFirstLevelDelegate> delegate;
+@property (nonatomic, assign) NSInteger roomID;
 
 @end

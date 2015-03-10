@@ -10,4 +10,6 @@
 
 @interface DeviceManageController : UIViewController
 
+@property (nonatomic, assign) NSInteger roomID;
+
 @end

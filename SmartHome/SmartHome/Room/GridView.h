@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SwitchObject.h"
+#import "SwitchEntity.h"
 
 @class GridView;
 @protocol GridViewDelegate <NSObject>
 
 - (void)gridViewAddSwitch:(GridView *)gridView;
+- (void)gridViewLongPress:(GridView *)gridView;
 
 @end
 
@@ -23,7 +24,7 @@
 @property (nonatomic, assign) BOOL onOffFlag;
 @property (nonatomic, weak) id<GridViewDelegate> delegate;
 
-@property (nonatomic, strong) SwitchObject *switchObj;
+@property (nonatomic, strong) SwitchEntity *switchEntity;
 
 + (GridView *)getNibInstance;
 

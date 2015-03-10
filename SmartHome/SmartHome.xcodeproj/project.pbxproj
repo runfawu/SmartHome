@@ -57,6 +57,10 @@
 		71F381EF1AA97D2F008DC5DA /* DeviceAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F381ED1AA97D2F008DC5DA /* DeviceAddController.m */; };
 		71F381F01AA97D2F008DC5DA /* DeviceAddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F381EE1AA97D2F008DC5DA /* DeviceAddController.xib */; };
 		71F381F31AA9B25F008DC5DA /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F381F21AA9B25F008DC5DA /* ScanViewController.m */; };
+		71F8537E1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71F8537C1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodeld */; };
+		71F8538A1AAED84900DF3CB0 /* SwitchEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F853891AAED84900DF3CB0 /* SwitchEntity.m */; };
+		71F8538E1AAEEE3500DF3CB0 /* RoomManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F8538C1AAEEE3500DF3CB0 /* RoomManageController.m */; };
+		71F8538F1AAEEE3500DF3CB0 /* RoomManageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F8538D1AAEEE3500DF3CB0 /* RoomManageController.xib */; };
 		71FD37D21AA5B0A200B10DE5 /* DeviceManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FD37D01AA5B0A200B10DE5 /* DeviceManageController.m */; };
 		71FD37D31AA5B0A200B10DE5 /* DeviceManageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FD37D11AA5B0A200B10DE5 /* DeviceManageController.xib */; };
 /* End PBXBuildFile section */
@@ -160,6 +164,12 @@
 		71F381EE1AA97D2F008DC5DA /* DeviceAddController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceAddController.xib; sourceTree = "<group>"; };
 		71F381F11AA9B25F008DC5DA /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		71F381F21AA9B25F008DC5DA /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		71F8537D1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwitchModel.xcdatamodel; sourceTree = "<group>"; };
+		71F853881AAED84900DF3CB0 /* SwitchEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchEntity.h; sourceTree = "<group>"; };
+		71F853891AAED84900DF3CB0 /* SwitchEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchEntity.m; sourceTree = "<group>"; };
+		71F8538B1AAEEE3500DF3CB0 /* RoomManageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomManageController.h; sourceTree = "<group>"; };
+		71F8538C1AAEEE3500DF3CB0 /* RoomManageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomManageController.m; sourceTree = "<group>"; };
+		71F8538D1AAEEE3500DF3CB0 /* RoomManageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomManageController.xib; sourceTree = "<group>"; };
 		71FD37CF1AA5B0A200B10DE5 /* DeviceManageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManageController.h; sourceTree = "<group>"; };
 		71FD37D01AA5B0A200B10DE5 /* DeviceManageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManageController.m; sourceTree = "<group>"; };
 		71FD37D11AA5B0A200B10DE5 /* DeviceManageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceManageController.xib; sourceTree = "<group>"; };
@@ -188,6 +198,7 @@
 		040FFC5F1A787A6000809979 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				71EA5F6E1AA445E200543C62 /* Room */,
 				040FFC601A787A7E00809979 /* Setting */,
 			);
 			name = VC;
@@ -260,6 +271,9 @@
 				04AD62B01A8207460059A27A /* Light.m */,
 				04AD62B21A8209580059A27A /* Socket.h */,
 				04AD62B31A8209580059A27A /* Socket.m */,
+				71F8537C1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodeld */,
+				71F853881AAED84900DF3CB0 /* SwitchEntity.h */,
+				71F853891AAED84900DF3CB0 /* SwitchEntity.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -334,7 +348,6 @@
 				04EDB2421A773F16002F3F50 /* AppDelegate.m */,
 				04EDB2441A773F16002F3F50 /* RoomViewController.h */,
 				04EDB2451A773F16002F3F50 /* RoomViewController.m */,
-				71EA5F6E1AA445E200543C62 /* Room */,
 				04EDB24A1A773F16002F3F50 /* Main.storyboard */,
 				04EDB24D1A773F16002F3F50 /* Images.xcassets */,
 				04EDB24F1A773F16002F3F50 /* LaunchScreen.xib */,
@@ -406,14 +419,14 @@
 				71FD37CF1AA5B0A200B10DE5 /* DeviceManageController.h */,
 				71FD37D01AA5B0A200B10DE5 /* DeviceManageController.m */,
 				71FD37D11AA5B0A200B10DE5 /* DeviceManageController.xib */,
-				71F381E71AA977E0008DC5DA /* ConnectNetController.h */,
-				71F381E81AA977E0008DC5DA /* ConnectNetController.m */,
-				71F381E91AA977E0008DC5DA /* ConnectNetController.xib */,
 				71F381EC1AA97D2F008DC5DA /* DeviceAddController.h */,
 				71F381ED1AA97D2F008DC5DA /* DeviceAddController.m */,
 				71F381EE1AA97D2F008DC5DA /* DeviceAddController.xib */,
 				71F381F11AA9B25F008DC5DA /* ScanViewController.h */,
 				71F381F21AA9B25F008DC5DA /* ScanViewController.m */,
+				71F8538B1AAEEE3500DF3CB0 /* RoomManageController.h */,
+				71F8538C1AAEEE3500DF3CB0 /* RoomManageController.m */,
+				71F8538D1AAEEE3500DF3CB0 /* RoomManageController.xib */,
 				71EA5F741AA4605000543C62 /* GridView.h */,
 				71EA5F751AA4605000543C62 /* GridView.m */,
 				71EA5F771AA4605F00543C62 /* GridView.xib */,
@@ -422,6 +435,9 @@
 				7133D2A31AA6F1D40091479A /* DeviceManageCell.h */,
 				7133D2A41AA6F1D40091479A /* DeviceManageCell.m */,
 				7133D2A51AA6F1D40091479A /* DeviceManageCell.xib */,
+				71F381E71AA977E0008DC5DA /* ConnectNetController.h */,
+				71F381E81AA977E0008DC5DA /* ConnectNetController.m */,
+				71F381E91AA977E0008DC5DA /* ConnectNetController.xib */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -475,9 +491,11 @@
 				TargetAttributes = {
 					04EDB2391A773F16002F3F50 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = UHUPY4237T;
 					};
 					04EDB2551A773F17002F3F50 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = UHUPY4237T;
 						TestTargetID = 04EDB2391A773F16002F3F50;
 					};
 				};
@@ -519,6 +537,7 @@
 				71EA5F731AA4463900543C62 /* RoomFirstLevelController.xib in Resources */,
 				71F381EB1AA977E0008DC5DA /* ConnectNetController.xib in Resources */,
 				04EDB24E1A773F16002F3F50 /* Images.xcassets in Resources */,
+				71F8538F1AAEEE3500DF3CB0 /* RoomManageController.xib in Resources */,
 				04EF4DDF1AAD92DA00CD971D /* AddRoomViewSubview.xib in Resources */,
 				04EF4DD91AAD92DA00CD971D /* AddRoomEditView.xib in Resources */,
 				04EF4DDB1AAD92DA00CD971D /* AddRoomView.xib in Resources */,
@@ -539,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F8538A1AAED84900DF3CB0 /* SwitchEntity.m in Sources */,
 				04064D921AAC2EE100CC1E22 /* SwitchObject.m in Sources */,
 				04ED02591AA6A1190034C319 /* RoomSettingViewController.m in Sources */,
 				04AD62AE1A8203EE0059A27A /* Devices.m in Sources */,
@@ -569,7 +589,9 @@
 				04EF4DDA1AAD92DA00CD971D /* AddRoomView.m in Sources */,
 				71F381F31AA9B25F008DC5DA /* ScanViewController.m in Sources */,
 				04AD62EF1A835D3B0059A27A /* Comon.m in Sources */,
+				71F8538E1AAEEE3500DF3CB0 /* RoomManageController.m in Sources */,
 				04EDB2401A773F16002F3F50 /* main.m in Sources */,
+				71F8537E1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodeld in Sources */,
 				04FC469D1AA93F0700A39094 /* GCDAsyncUdpSocket.m in Sources */,
 				04AD62A91A81FCA40059A27A /* FMDatabaseQueue.m in Sources */,
 				71F381EF1AA97D2F008DC5DA /* DeviceAddController.m in Sources */,
@@ -699,10 +721,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kaifa Qin (JRS5U6MZ74)";
 				INFOPLIST_FILE = SmartHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ff32e3ea-7f23-48af-9339-7080c0240c6e";
 			};
 			name = Debug;
 		};
@@ -710,10 +734,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kaifa Qin (JRS5U6MZ74)";
 				INFOPLIST_FILE = SmartHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ff32e3ea-7f23-48af-9339-7080c0240c6e";
 			};
 			name = Release;
 		};
@@ -721,6 +747,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -732,6 +760,7 @@
 				INFOPLIST_FILE = SmartHomeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHome.app/SmartHome";
 			};
 			name = Debug;
@@ -740,6 +769,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -747,6 +778,7 @@
 				INFOPLIST_FILE = SmartHomeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHome.app/SmartHome";
 			};
 			name = Release;
@@ -782,6 +814,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		71F8537C1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				71F8537D1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodel */,
+			);
+			currentVersion = 71F8537D1AAEACDD00DF3CB0 /* SwitchModel.xcdatamodel */;
+			path = SwitchModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04EDB2321A773F16002F3F50 /* Project object */;
 }

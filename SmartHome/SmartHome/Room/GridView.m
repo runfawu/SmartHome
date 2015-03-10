@@ -8,6 +8,7 @@
 
 #import "GridView.h"
 #import "Comon.h"
+#import "AppDelegate.h"
 
 @implementation GridView
 
@@ -33,14 +34,16 @@
 - (void)longPressTheSwitch:(UILongPressGestureRecognizer *)longPress
 {
     if (longPress.state == UIGestureRecognizerStateEnded) {
-
+        if (self.tag != kGridOfAddDeviceTag && self.delegate && [self.delegate respondsToSelector:@selector(gridViewAddSwitch:)]) {
+            [self.delegate gridViewLongPress:self];
+        }
     }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     self.onOffFlag = !self.onOffFlag;
-    self.switchObj.switchFlag = self.onOffFlag;
+    
     if (self.tag == kGridOfAddDeviceTag && self.delegate && [self.delegate respondsToSelector:@selector(gridViewAddSwitch:)]) {
         [self.delegate gridViewAddSwitch:self];
     }
@@ -50,15 +53,16 @@
 {
     _onOffFlag = onOffFlag;
     
-    if (onOffFlag) {
-        self.thumbnailImageView.backgroundColor = [UIColor redColor];
-    } else {
-        self.thumbnailImageView.backgroundColor = [UIColor orangeColor];
+    if (self.tag == kGridOfAddDeviceTag) { // “添加设备”这个格子
+        return; //self.thumbnailImageView.backgroundColor = [UIColor clearColor];
     }
     
-    if (self.tag == -101) { // “添加设备”这个格子
-       self.thumbnailImageView.backgroundColor = [UIColor clearColor];
-    }
+    NSString *imageName = onOffFlag ? @"switch_on": @"switch_off";
+    self.thumbnailImageView.image = [UIImage imageNamed:imageName];
+    
+    // 保存状态到 core data
+    self.switchEntity.imageName = imageName;
+    [APP_DELEGATE saveContext];
 }
 
 @end
