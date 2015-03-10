@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DeviceDB.h"
-#import "Comon.h"
+//#import "Comon.h"
 #import "Common.h"
 #import "SwitchEntity.h"
 
@@ -27,7 +27,6 @@
     self.orderCode=0;
     //RoomId
     self.roomID=100;
-    
     
     //数据库创建表
     DeviceDB *db=[DeviceDB sharedInstance];
@@ -84,6 +83,7 @@
             NSLog(@"current roomID=%d",self.roomID);
         }
     }
+    [self initializationDataTable];
     
     return YES;
 }
@@ -195,5 +195,83 @@
     }
 }
 
+
+//初始化数据表、添加默认数据
+-(void)initializationDataTable{
+    
+    //数据库
+    DeviceDB *db=[DeviceDB sharedInstance];
+    [db connect];
+    BOOL isHaveTable=YES;
+    //创建表
+    
+    if (![db isTableExist:DEVICE_TABLE]) {
+        isHaveTable=NO;
+        if (![db createTable:DEVICE_TABLE values:DEVICE_TABLE_FIELD]) {
+            isHaveTable=YES;
+            NSLog(@"创建device表失败!!!");
+        }else{
+            NSMutableArray *deviceFields = [[NSMutableArray alloc]init];
+            NSMutableArray *deviceValues = [[NSMutableArray alloc]init];
+            
+            [deviceFields addObject:@"roomId"];
+            [deviceFields addObject:@"roomName"];
+            
+            [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+            [deviceValues addObject:@"客厅"];
+            if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+            {
+                NSLog(@"health table 存储记录失败");
+            }else{
+                self.roomID+=1;
+            }
+            
+            [deviceValues removeAllObjects];
+            [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+            [deviceValues addObject:@"卧室"];
+            
+            if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+            {
+                NSLog(@"Devices table 存储记录失败");
+            }else{
+                self.roomID+=1;
+            }
+            
+            [deviceValues removeAllObjects];
+            [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+            [deviceValues addObject:@"厨房"];
+            
+            if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+            {
+                NSLog(@"Devices table 存储记录失败");
+            }else{
+                self.roomID+=1;
+            }
+            
+            [deviceValues removeAllObjects];
+            [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+            [deviceValues addObject:@"卫生间"];
+            
+            if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+            {
+                NSLog(@"Devices table 存储记录失败");
+            }else{
+                self.roomID+=1;
+            }
+        }
+    }
+    if (![db isTableExist:LIGHT_TABLE]) {
+        if (![db createTable:LIGHT_TABLE values:LIGHT_TABLE_FIELD]) {
+            NSLog(@"创建light表失败!!!");
+        }
+    }
+    if (![db isTableExist:SOCKET_TABLE]) {
+        if (![db createTable:SOCKET_TABLE values:SOCKET_TABLE_FIELD]) {
+            NSLog(@"创建socket表失败!!!");
+        }
+    }
+    
+    
+}
 
 @end

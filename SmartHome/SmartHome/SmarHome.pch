@@ -1,0 +1,17 @@
+//
+//  SmarHome.pch
+//  SmartHome
+//
+//  Created by micheal on 15/3/10.
+//  Copyright (c) 2015年 renren. All rights reserved.
+//
+
+#ifndef SmartHome_SmarHome_pch
+#define SmartHome_SmarHome_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Comon.h"
+
+#endif

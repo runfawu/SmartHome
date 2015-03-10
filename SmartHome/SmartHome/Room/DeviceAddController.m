@@ -46,7 +46,8 @@
         return;
     }
     
-    if ([self.codeTextField.text hasPrefix:@"15"] && self.codeTextField.text.length == 8) { // TODO: 待完善
+    //插座05+6位数 灯是14、15、16+6位数
+    if (([self.codeTextField.text hasPrefix:@"14"]||[self.codeTextField.text hasPrefix:@"15"]||[self.codeTextField.text hasPrefix:@"16"]||[self.codeTextField.text hasPrefix:@"05"]) && self.codeTextField.text.length == 8) {
         [UIView animateWithDuration:0.2 animations:^{
             self.codeView.alpha = 0;
             [self.codeTextField resignFirstResponder];
@@ -109,7 +110,7 @@
     newSwitch.name = self.deviceNameTextField.text;
     newSwitch.isOn = @NO;
     newSwitch.roomID = @(self.roomID);
-    newSwitch.type = [self.codeTextField.text hasPrefix:@"15"] ? SWITCH_TYPE_LIGHT: SWITCH_TYPE_SOCKET;
+    newSwitch.type = [self.codeTextField.text hasPrefix:@"05"] ? SWITCH_TYPE_SOCKET: SWITCH_TYPE_LIGHT;
     newSwitch.imageName = kSwitchOffImageName;
     newSwitch.code = self.codeTextField.text;
     newSwitch.roomImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Account_Cloud"]); // 可能有问题
