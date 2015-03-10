@@ -40,13 +40,14 @@
         [alert show];
         return;
     }
-    
-    if ([self.codeTextField.text hasPrefix:@"15"] && self.codeTextField.text.length == 8) {
+    //插座05+6位数 灯是14、15、16+6位数
+    if (([self.codeTextField.text hasPrefix:@"14"]||[self.codeTextField.text hasPrefix:@"15"]||[self.codeTextField.text hasPrefix:@"16"]||[self.codeTextField.text hasPrefix:@"05"]) && self.codeTextField.text.length == 8) {
         [UIView animateWithDuration:0.2 animations:^{
             self.codeView.alpha = 0;
         } completion:^(BOOL finished) {
             self.codeView.hidden = YES;
             self.deviceView.hidden = NO;
+//            self.deviceView.
             self.deviceViewTopSpaceConstraint.constant = 94;
         }];
     } else {

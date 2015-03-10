@@ -139,6 +139,7 @@
 		04EF4DD21AAD92DA00CD971D /* AddRoomViewSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRoomViewSubview.h; sourceTree = "<group>"; };
 		04EF4DD31AAD92DA00CD971D /* AddRoomViewSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRoomViewSubview.m; sourceTree = "<group>"; };
 		04EF4DD41AAD92DA00CD971D /* AddRoomViewSubview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRoomViewSubview.xib; sourceTree = "<group>"; };
+		04F27E201AAEC31600B5ADF0 /* SmarHome.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmarHome.pch; path = SmartHome/SmarHome.pch; sourceTree = "<group>"; };
 		04FC469B1AA93F0700A39094 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		04FC469C1AA93F0700A39094 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		7133D2A31AA6F1D40091479A /* DeviceManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManageCell.h; sourceTree = "<group>"; };
@@ -305,6 +306,7 @@
 		04EDB2311A773F16002F3F50 = {
 			isa = PBXGroup;
 			children = (
+				04F27E201AAEC31600B5ADF0 /* SmarHome.pch */,
 				04447DCE1AA550D400F9564C /* SystemConfiguration.framework */,
 				04AD62F01A83629A0059A27A /* libsqlite3.0.dylib */,
 				04EDB23C1A773F16002F3F50 /* SmartHome */,
@@ -699,6 +701,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SmartHome/SmarHome.pch";
 				INFOPLIST_FILE = SmartHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -710,6 +714,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SmartHome/SmarHome.pch";
 				INFOPLIST_FILE = SmartHome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

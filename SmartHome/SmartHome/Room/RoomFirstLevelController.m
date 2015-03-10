@@ -59,8 +59,6 @@
         [self.switchArray addObject:object];
     }
      */
-    
-    
 }
 
 #pragma mark - Tap image
