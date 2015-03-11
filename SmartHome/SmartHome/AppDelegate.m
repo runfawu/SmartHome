@@ -27,62 +27,62 @@
     self.orderCode=0;
     //RoomId
     self.roomID=100;
-    
-    //数据库创建表
-    DeviceDB *db=[DeviceDB sharedInstance];
-    [db connect];
-    BOOL isHaveTable=YES;
-    if (![db isTableExist:DEVICE_TABLE]) {
-        isHaveTable=NO;
-        if ([db createTable:DEVICE_TABLE values:DEVICE_TABLE_FIELD]) {
-            isHaveTable=YES;
-        }
-    }
-    
-    // ! 确保只初始化一次默认数据
-    NSArray *roomArray=[db getDevicesRegister];
-    if ( ! roomArray.count > 0) {
-        NSMutableArray *deviceFields = [[NSMutableArray alloc]init];
-        NSMutableArray *deviceValues = [[NSMutableArray alloc]init];
-        
-        [deviceFields addObject:@"roomId"];
-        [deviceFields addObject:@"roomName"];
-        
-        [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
-        [deviceValues addObject:@"客厅"];
-        if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
-        {
-            NSLog(@"health table 存储记录失败");
-        }else{
-            [self createAddButtonWithRoomID:self.roomID];
-            self.roomID+=1;
-        }
-        
-        [deviceValues removeAllObjects];
-        [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
-        [deviceValues addObject:@"厨房"];
-        
-        if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
-        {
-            NSLog(@"health table 存储记录失败");
-        }else{
-            [self createAddButtonWithRoomID:self.roomID];
-            self.roomID+=1;
-        }
-        
-        [deviceValues removeAllObjects];
-        [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
-        [deviceValues addObject:@"卧室"];
-        
-        if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
-        {
-            NSLog(@"health table 存储记录失败");
-        }else{
-            [self createAddButtonWithRoomID:self.roomID];
-            self.roomID+=1;
-            NSLog(@"current roomID=%d",self.roomID);
-        }
-    }
+//    
+//    //数据库创建表
+//    DeviceDB *db=[DeviceDB sharedInstance];
+//    [db connect];
+//    BOOL isHaveTable=YES;
+//    if (![db isTableExist:DEVICE_TABLE]) {
+//        isHaveTable=NO;
+//        if ([db createTable:DEVICE_TABLE values:DEVICE_TABLE_FIELD]) {
+//            isHaveTable=YES;
+//        }
+//    }
+//    
+//    // ! 确保只初始化一次默认数据
+//    NSArray *roomArray=[db getDevicesRegister];
+//    if ( ! roomArray.count > 0) {
+//        NSMutableArray *deviceFields = [[NSMutableArray alloc]init];
+//        NSMutableArray *deviceValues = [[NSMutableArray alloc]init];
+//        
+//        [deviceFields addObject:@"roomId"];
+//        [deviceFields addObject:@"roomName"];
+//        
+//        [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+//        [deviceValues addObject:@"客厅"];
+//        if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+//        {
+//            NSLog(@"health table 存储记录失败");
+//        }else{
+//            [self createAddButtonWithRoomID:self.roomID];
+//            self.roomID+=1;
+//        }
+//        
+//        [deviceValues removeAllObjects];
+//        [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+//        [deviceValues addObject:@"厨房"];
+//        
+//        if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+//        {
+//            NSLog(@"health table 存储记录失败");
+//        }else{
+//            [self createAddButtonWithRoomID:self.roomID];
+//            self.roomID+=1;
+//        }
+//        
+//        [deviceValues removeAllObjects];
+//        [deviceValues addObject:[NSNumber numberWithInteger:self.roomID]];
+//        [deviceValues addObject:@"卧室"];
+//        
+//        if(! [db insertWithTable:DEVICE_TABLE fields:deviceFields values:deviceValues])
+//        {
+//            NSLog(@"health table 存储记录失败");
+//        }else{
+//            [self createAddButtonWithRoomID:self.roomID];
+//            self.roomID+=1;
+//            NSLog(@"current roomID=%d",self.roomID);
+//        }
+//    }
     [self initializationDataTable];
     
     return YES;

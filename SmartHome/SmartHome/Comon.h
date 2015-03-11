@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define ADDLIGHTSUCCESSNOTIFICATION  @"AddLightSuccessNotification"
+#define ADDSOCKETSUCCESSNOTIFICATION  @"AddSocketSuccessNotification"
+
 #define SCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH     [UIScreen mainScreen].bounds.size.width
 #define kNaviHeight      64

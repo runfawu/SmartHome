@@ -167,4 +167,7 @@
 //根据mac获取Socket对象
 -(Socket *)getSocketWithMac:(NSString *)mac;
 
+//获取某房间下的所有设备
+-(NSMutableArray *)getDevicesWithRoomName:(NSString *)roomName;
+
 @end

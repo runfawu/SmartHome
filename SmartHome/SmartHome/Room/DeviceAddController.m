@@ -117,6 +117,10 @@
             if(![db insertWithTable:DEVICE_TABLE fields:fields values:values])
             {
                 NSLog(@"写入device表失败");
+            }else{
+                //添加设备成功，发送通知涮新roomFirst界面
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:ADDLIGHTSUCCESSNOTIFICATION object:nil];
             }
         }
     }else if ([self.codeTextField.text hasPrefix:@"05"]){
@@ -138,6 +142,7 @@
             if ([values count]>0) {
                 [values removeAllObjects];
             }
+            NSLog(@"self.code text field :%@",self.codeTextField.text);
             Socket *socket=[db getSocketWithMac:self.codeTextField.text];
             [fields addObject:@"socketId"];
             [fields addObject:@"deviceName"];
@@ -152,10 +157,11 @@
             if(![db insertWithTable:DEVICE_TABLE fields:fields values:values])
             {
                 NSLog(@"写入device表失败");
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:ADDSOCKETSUCCESSNOTIFICATION object:nil];
             }
         }
-    
-        }
+    }
 }
 
 //=======

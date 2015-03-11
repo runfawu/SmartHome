@@ -38,6 +38,8 @@
     
     // TODO: remove observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchDataFromCoreData) name:@"reloadSwitchData" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getDevicesRegisterFromDataBase) name:ADDLIGHTSUCCESSNOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getDevicesRegisterFromDataBase) name:ADDSOCKETSUCCESSNOTIFICATION object:nil];
     
     [self setup];
     [self addTapToImageView];
@@ -66,6 +68,14 @@
     NSArray *switchArray = [context executeFetchRequest:request error:nil];
     [self.switchArray addObjectsFromArray:switchArray];
     [self.aTableView reloadData];
+}
+
+//获取DevicesRegister表里房间等于客厅的所有设备
+-(void)getDevicesRegisterFromDataBase{
+    DeviceDB *db=[DeviceDB sharedInstance];
+    NSMutableArray *registerDeviceArray=[db getDevicesWithRoomName:@"客厅"];
+    //registerDeviceArray 里面都是Devices对象
+    NSLog(@"registerDevice :%@ count =%d",registerDeviceArray,[registerDeviceArray count]);
 }
 
 - (void)configRoomImage

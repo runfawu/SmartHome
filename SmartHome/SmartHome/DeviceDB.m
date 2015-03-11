@@ -594,7 +594,7 @@
 }
 
 -(Light *)getLightWithMac:(NSString *)mac{
-    NSString *sql= [NSString stringWithFormat:@"select * from %@ where mac=%@",LIGHT_TABLE,mac];
+    NSString *sql= [NSString stringWithFormat:@"select * from %@ where mac='%@'",LIGHT_TABLE,mac];
     
     FMResultSet *resultSet=[self.db executeQuery:sql];
     Light *light;
@@ -638,7 +638,7 @@
 }
 
 -(Socket *)getSocketWithMac:(NSString *)mac{
-    NSString *sql= [NSString stringWithFormat:@"select * from %@ where _id=%@",SOCKET_TABLE,mac];
+    NSString *sql= [NSString stringWithFormat:@"select * from %@ where mac='%@'",SOCKET_TABLE,mac];
     
     //select max(_id) from
     FMResultSet *resultSet=[self.db executeQuery:sql];
@@ -656,8 +656,28 @@
         socket=[[Socket alloc] initWithSocketId:socketId andOnTime:onTime andOffTime:offTime andNetworkType:networkType andMac:mac andOnTimeState:onTimeState andOffTimeState:offTimeState];
     }
     return socket;
-
 }
 
+-(NSMutableArray *)getDevicesWithRoomName:(NSString *)roomName{
+    __block NSMutableArray *devicesList=[NSMutableArray array];
+    
+    NSString *sql = [NSString stringWithFormat:@"select * from %@ where roomName='%@' and _id  > 4",DEVICE_TABLE,roomName];
+    
+    FMResultSet *resultSet=[self.db executeQuery:sql];
+    while ([resultSet next]) {
+        int devicesId=[resultSet intForColumn:@"_id"];
+        int socketId=[resultSet intForColumn:@"socketId"];
+        int lightId=[resultSet intForColumn:@"lightId"];
+        int roomId=[resultSet intForColumn:@"roomId"];
+        int state=[resultSet intForColumn:@"state"];
+        NSString *deviceName=[resultSet stringForColumn:@"deviceName"];
+        NSString *roomName=[resultSet stringForColumn:@"roomName"];
+        
+        Devices *device=[[Devices alloc] initWithDevicesId:devicesId andSocketId:socketId andLightId:lightId andRoomId:roomId andState:state andDeviceName:deviceName andRoomName:roomName];
+        [devicesList addObject:device];
+    }
+    return devicesList;
+
+}
 
 @end
