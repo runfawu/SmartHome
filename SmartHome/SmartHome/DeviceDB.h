@@ -155,6 +155,19 @@
 //获取房间数量
 -(NSArray *)getDevicesRegister;
 
+//根据ID获取Light对象
+-(Light *)getLightWithID:(int)lightID;
 
+//根据mac获取Light对象
+-(Light *)getLightWithMac:(NSString *)mac;
+
+//根据ID获取Socket对象
+-(Socket *)getSocketWithID:(int)socketID;
+
+//根据mac获取Socket对象
+-(Socket *)getSocketWithMac:(NSString *)mac;
+
+//获取某房间下的所有设备
+-(NSMutableArray *)getDevicesWithRoomName:(NSString *)roomName;
 
 @end

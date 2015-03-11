@@ -18,7 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *deviceNameTextField;
 @property (weak, nonatomic) IBOutlet UIView *codeView;
 @property (weak, nonatomic) IBOutlet UIView *deviceView;
-@property (weak, nonatomic) IBOutlet UILabel *deviceCodeLabel;
+
+@property (weak,nonatomic) IBOutlet UILabel *deviceCodeLabel;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *deviceViewTopSpaceConstraint;
 
 @end
@@ -54,8 +56,10 @@
         } completion:^(BOOL finished) {
             self.codeView.hidden = YES;
             self.deviceView.hidden = NO;
-            self.deviceCodeLabel.text = [NSString stringWithFormat:@"设备地址: %@", self.codeTextField.text];
+
+            self.deviceCodeLabel.text = [NSString stringWithFormat:@"设备地址:%@", self.codeTextField.text];
             [self.deviceNameTextField becomeFirstResponder];
+
             self.deviceViewTopSpaceConstraint.constant = 94;
         }];
     } else {
@@ -72,29 +76,118 @@
         [alert show];
         return;
     }
+
+    // TODO: 数据库中查找，若无则添加
     
-    // 数据库中查找，若无则添加
-    NSManagedObjectContext *context = APP_DELEGATE.managedObjectContext;
+    DeviceDB *db=[DeviceDB sharedInstance];
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SwitchEntity"];
-    request.predicate = [NSPredicate predicateWithFormat:@"name == %@", self.deviceNameTextField.text];
-    NSArray *switchArrayOfName = [context executeFetchRequest:request error:nil];
-    if (switchArrayOfName.count > 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"该名称已存在，请重新命名" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alert show];
-        return;
+    //写入light表
+    if ([self.codeTextField.text hasPrefix:@"14"]||[self.codeTextField.text hasPrefix:@"15"]||[self.codeTextField.text hasPrefix:@"16"]) {
+        //先写如Light表再写如Register表
+        
+        NSMutableArray *fields = [[NSMutableArray alloc]init];
+        NSMutableArray *values = [[NSMutableArray alloc]init];
+        
+        [fields addObject:@"mac"];
+        
+        [values addObject:self.codeTextField.text];
+      
+        if(![db insertWithTable:LIGHT_TABLE fields:fields values:values])
+        {
+            NSLog(@"写入light表失败");
+        }else{
+            //取出ID 写入register表
+            if ([fields count]>0) {
+                [fields removeAllObjects];
+            }
+            if ([values count]>0) {
+                [values removeAllObjects];
+            }
+            Light *light=[db getLightWithMac:self.codeTextField.text];
+            [fields addObject:@"lightId"];
+            [fields addObject:@"deviceName"];
+            [fields addObject:@"roomId"];
+            [fields addObject:@"roomName"];
+            
+            [values addObject:[NSNumber numberWithInt:light.lightId]];
+            [values addObject:self.deviceNameTextField.text];
+            [values addObject:[NSNumber numberWithInt:100]];
+            [values addObject:@"客厅"];
+            
+            if(![db insertWithTable:DEVICE_TABLE fields:fields values:values])
+            {
+                NSLog(@"写入device表失败");
+            }else{
+                //添加设备成功，发送通知涮新roomFirst界面
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:ADDLIGHTSUCCESSNOTIFICATION object:nil];
+            }
+        }
+    }else if ([self.codeTextField.text hasPrefix:@"05"]){
+        NSMutableArray *fields = [[NSMutableArray alloc]init];
+        NSMutableArray *values = [[NSMutableArray alloc]init];
+        
+        [fields addObject:@"mac"];
+        
+        [values addObject:self.codeTextField.text];
+        
+        if(![db insertWithTable:SOCKET_TABLE fields:fields values:values])
+        {
+            NSLog(@"写入socket表失败");
+        }else{
+            //取出ID 写入register表
+            if ([fields count]>0) {
+                [fields removeAllObjects];
+            }
+            if ([values count]>0) {
+                [values removeAllObjects];
+            }
+            NSLog(@"self.code text field :%@",self.codeTextField.text);
+            Socket *socket=[db getSocketWithMac:self.codeTextField.text];
+            [fields addObject:@"socketId"];
+            [fields addObject:@"deviceName"];
+            [fields addObject:@"roomId"];
+            [fields addObject:@"roomName"];
+            
+            [values addObject:[NSNumber numberWithInt:socket.socketId]];
+            [values addObject:self.deviceNameTextField.text];
+            [values addObject:[NSNumber numberWithInt:100]];
+            [values addObject:@"客厅"];
+            
+            if(![db insertWithTable:DEVICE_TABLE fields:fields values:values])
+            {
+                NSLog(@"写入device表失败");
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:ADDSOCKETSUCCESSNOTIFICATION object:nil];
+            }
+        }
     }
-    
-    request.predicate = [NSPredicate predicateWithFormat:@"code == %@", self.codeTextField.text];
-    NSArray *switchArrayOfCode = [context executeFetchRequest:request error:nil];
-    if (switchArrayOfCode.count > 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"该设备已存在" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
-    [self saveNewSwitchToCoreData];
 }
+
+//=======
+//    
+//    // 数据库中查找，若无则添加
+//    NSManagedObjectContext *context = APP_DELEGATE.managedObjectContext;
+//    
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SwitchEntity"];
+//    request.predicate = [NSPredicate predicateWithFormat:@"name == %@", self.deviceNameTextField.text];
+//    NSArray *switchArrayOfName = [context executeFetchRequest:request error:nil];
+//    if (switchArrayOfName.count > 0) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"该名称已存在，请重新命名" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+//        [alert show];
+//        return;
+//    }
+//    
+//    request.predicate = [NSPredicate predicateWithFormat:@"code == %@", self.codeTextField.text];
+//    NSArray *switchArrayOfCode = [context executeFetchRequest:request error:nil];
+//    if (switchArrayOfCode.count > 0) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"该设备已存在" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+//        [alert show];
+//        return;
+//    }
+//    
+//    [self saveNewSwitchToCoreData];
+//}
 
 - (void)saveNewSwitchToCoreData
 {

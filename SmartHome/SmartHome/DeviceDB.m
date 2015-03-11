@@ -568,5 +568,116 @@
 
 }
 
+-(Light *)getLightWithID:(int)lightID{
+    NSString *sql= [NSString stringWithFormat:@"select * from %@ where _id=%d",LIGHT_TABLE,lightID];
+
+   //select max(_id) from
+    FMResultSet *resultSet=[self.db executeQuery:sql];
+    Light *light;
+    while ([resultSet next]) {
+        int lightId=[resultSet intForColumn:@"_id"];
+        NSString *mac=[resultSet stringForColumn:@"mac"];
+        int networkType=[resultSet intForColumn:@"networkType"];
+        NSString *onTime=[resultSet stringForColumn:@"onTime"];
+        NSString *offTime=[resultSet stringForColumn:@"offTime"];
+        int onTimeState=[resultSet intForColumn:@"onTimeState"];
+        int offTimeState=[resultSet intForColumn:@"offTimeState"];
+        int rgb=[resultSet intForColumn:@"rgb"];
+        int luminance=[resultSet intForColumn:@"luminance"];
+        int colorTemp=[resultSet intForColumn:@"color_Temp"];
+        int mode=[resultSet intForColumn:@"mode"];
+  
+        
+        light=[[Light alloc] initWithLightId:lightId andMac:mac andNetworkType:networkType andOnTime:onTime andOffTime:offTime andOnTimeState:onTimeState andOffTimeState:offTimeState andRGB:rgb andLuminance:luminance andColorTemp:colorTemp andMode:mode];
+    }
+    return light;
+}
+
+-(Light *)getLightWithMac:(NSString *)mac{
+    NSString *sql= [NSString stringWithFormat:@"select * from %@ where mac='%@'",LIGHT_TABLE,mac];
+    
+    FMResultSet *resultSet=[self.db executeQuery:sql];
+    Light *light;
+    while ([resultSet next]) {
+        int lightId=[resultSet intForColumn:@"_id"];
+        NSString *mac=[resultSet stringForColumn:@"mac"];
+        int networkType=[resultSet intForColumn:@"networkType"];
+        NSString *onTime=[resultSet stringForColumn:@"onTime"];
+        NSString *offTime=[resultSet stringForColumn:@"offTime"];
+        int onTimeState=[resultSet intForColumn:@"onTimeState"];
+        int offTimeState=[resultSet intForColumn:@"offTimeState"];
+        int rgb=[resultSet intForColumn:@"rgb"];
+        int luminance=[resultSet intForColumn:@"luminance"];
+        int colorTemp=[resultSet intForColumn:@"color_Temp"];
+        int mode=[resultSet intForColumn:@"mode"];
+        
+        light=[[Light alloc] initWithLightId:lightId andMac:mac andNetworkType:networkType andOnTime:onTime andOffTime:offTime andOnTimeState:onTimeState andOffTimeState:offTimeState andRGB:rgb andLuminance:luminance andColorTemp:colorTemp andMode:mode];
+    }
+    return light;
+}
+
+-(Socket *)getSocketWithID:(int)socketID{
+    NSString *sql= [NSString stringWithFormat:@"select * from %@ where _id=%d",SOCKET_TABLE,socketID];
+    
+    //select max(_id) from
+    FMResultSet *resultSet=[self.db executeQuery:sql];
+    Socket *socket;
+    while ([resultSet next]) {
+        int socketId=[resultSet intForColumn:@"_id"];
+        NSString *mac=[resultSet stringForColumn:@"mac"];
+        int networkType=[resultSet intForColumn:@"networkType"];
+        NSString *onTime=[resultSet stringForColumn:@"onTime"];
+        NSString *offTime=[resultSet stringForColumn:@"offTime"];
+        int onTimeState=[resultSet intForColumn:@"onTimeState"];
+        int offTimeState=[resultSet intForColumn:@"offTimeState"];
+        
+        
+        socket=[[Socket alloc] initWithSocketId:socketId andOnTime:onTime andOffTime:offTime andNetworkType:networkType andMac:mac andOnTimeState:onTimeState andOffTimeState:offTimeState];
+    }
+    return socket;
+}
+
+-(Socket *)getSocketWithMac:(NSString *)mac{
+    NSString *sql= [NSString stringWithFormat:@"select * from %@ where mac='%@'",SOCKET_TABLE,mac];
+    
+    //select max(_id) from
+    FMResultSet *resultSet=[self.db executeQuery:sql];
+    Socket *socket;
+    while ([resultSet next]) {
+        int socketId=[resultSet intForColumn:@"_id"];
+        NSString *mac=[resultSet stringForColumn:@"mac"];
+        int networkType=[resultSet intForColumn:@"networkType"];
+        NSString *onTime=[resultSet stringForColumn:@"onTime"];
+        NSString *offTime=[resultSet stringForColumn:@"offTime"];
+        int onTimeState=[resultSet intForColumn:@"onTimeState"];
+        int offTimeState=[resultSet intForColumn:@"offTimeState"];
+        
+        
+        socket=[[Socket alloc] initWithSocketId:socketId andOnTime:onTime andOffTime:offTime andNetworkType:networkType andMac:mac andOnTimeState:onTimeState andOffTimeState:offTimeState];
+    }
+    return socket;
+}
+
+-(NSMutableArray *)getDevicesWithRoomName:(NSString *)roomName{
+    __block NSMutableArray *devicesList=[NSMutableArray array];
+    
+    NSString *sql = [NSString stringWithFormat:@"select * from %@ where roomName='%@' and _id  > 4",DEVICE_TABLE,roomName];
+    
+    FMResultSet *resultSet=[self.db executeQuery:sql];
+    while ([resultSet next]) {
+        int devicesId=[resultSet intForColumn:@"_id"];
+        int socketId=[resultSet intForColumn:@"socketId"];
+        int lightId=[resultSet intForColumn:@"lightId"];
+        int roomId=[resultSet intForColumn:@"roomId"];
+        int state=[resultSet intForColumn:@"state"];
+        NSString *deviceName=[resultSet stringForColumn:@"deviceName"];
+        NSString *roomName=[resultSet stringForColumn:@"roomName"];
+        
+        Devices *device=[[Devices alloc] initWithDevicesId:devicesId andSocketId:socketId andLightId:lightId andRoomId:roomId andState:state andDeviceName:deviceName andRoomName:roomName];
+        [devicesList addObject:device];
+    }
+    return devicesList;
+
+}
 
 @end
