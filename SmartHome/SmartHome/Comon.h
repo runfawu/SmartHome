@@ -14,6 +14,13 @@
 #define kTabBarHeight    49
 #define kGridOfAddDeviceTag   -101
 
+#define SWITCH_TYPE_LIGHT    @"lightType"
+#define SWITCH_TYPE_SOCKET   @"socketType"
+#define SWITCH_TYPE_ADD      @"addButton"
+#define kAddImageName        @"main_add"
+#define kSwitchOnImageName   @"switch_on"
+#define kSwitchOffImageName  @"switch_off"
+
 #define DEVICE_TABLE @"DevicesRegister"
 #define LIGHT_TABLE @"Light"
 #define SOCKET_TABLE @"Socket"
@@ -69,6 +76,7 @@
                             nil];\
 })
 
+#define APP_DELEGATE     ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 @interface Comon : NSObject
 

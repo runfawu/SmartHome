@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomManageController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Account_Cloud" translatesAutoresizingMaskIntoConstraints="NO" id="9FI-d9-GU2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
+                    <color key="backgroundColor" red="0.92941182850000004" green="0.69803923369999998" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRu-Zb-Ln5">
+                    <rect key="frame" x="0.0" y="374" width="320" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cil-wY-m9e">
+                            <rect key="frame" x="17" y="0.0" width="60" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="开关">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SH4-hN-BC3">
+                            <rect key="frame" x="114" y="0.0" width="60" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="拍照">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c27-rr-NrI">
+                            <rect key="frame" x="226" y="0.0" width="60" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="换图">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="BX8-Hf-ZTc"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baa-ys-adX">
+                    <rect key="frame" x="0.0" y="445" width="320" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCm-iu-uAA">
+                            <rect key="frame" x="17" y="0.0" width="60" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="S-">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR6-Xm-gdS">
+                            <rect key="frame" x="114" y="0.0" width="60" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="M">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79D-0f-MDc">
+                            <rect key="frame" x="226" y="0.0" width="60" height="30"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="S+">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Aw4-iF-2HT"/>
+                    </constraints>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bsE-Um-bwX">
+                    <rect key="frame" x="18" y="409" width="284" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="Q4V-UR-LBz"/>
+                    </constraints>
+                </slider>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="baa-ys-adX" firstAttribute="top" secondItem="bsE-Um-bwX" secondAttribute="bottom" constant="5" id="6ha-4e-GcD"/>
+                <constraint firstItem="baa-ys-adX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JI9-bc-jS4"/>
+                <constraint firstAttribute="bottom" secondItem="baa-ys-adX" secondAttribute="bottom" constant="5" id="Jgk-cK-KSh"/>
+                <constraint firstItem="wRu-Zb-Ln5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kh3-7b-9V8"/>
+                <constraint firstAttribute="trailing" secondItem="baa-ys-adX" secondAttribute="trailing" id="O96-RC-5lo"/>
+                <constraint firstItem="9FI-d9-GU2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TFr-xB-B2O"/>
+                <constraint firstAttribute="bottom" secondItem="9FI-d9-GU2" secondAttribute="bottom" constant="120" id="TvB-az-ZVP"/>
+                <constraint firstAttribute="trailing" secondItem="9FI-d9-GU2" secondAttribute="trailing" id="UpO-wQ-PVV"/>
+                <constraint firstAttribute="trailing" secondItem="bsE-Um-bwX" secondAttribute="trailing" constant="20" id="V6N-Om-QOD"/>
+                <constraint firstItem="bsE-Um-bwX" firstAttribute="top" secondItem="wRu-Zb-Ln5" secondAttribute="bottom" constant="5" id="gdB-0P-V5b"/>
+                <constraint firstAttribute="trailing" secondItem="wRu-Zb-Ln5" secondAttribute="trailing" id="rSY-a7-yRf"/>
+                <constraint firstItem="9FI-d9-GU2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tCz-fI-rGL"/>
+                <constraint firstItem="bsE-Um-bwX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zHj-A4-GMw"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Account_Cloud" width="320" height="500"/>
+    </resources>
+</document>

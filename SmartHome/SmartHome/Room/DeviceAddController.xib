@@ -9,7 +9,9 @@
             <connections>
                 <outlet property="codeTextField" destination="c08-ss-63F" id="Wlx-L2-EMQ"/>
                 <outlet property="codeView" destination="Rf7-C2-mEW" id="6TY-tu-JmQ"/>
-                <outlet property="deviceCodeLabel" destination="dxo-ms-bfT" id="A14-N3-X7H"/>
+
+                <outlet property="deviceCodeLabel" destination="dxo-ms-bfT" id="SGk-IQ-lfh"/>
+
                 <outlet property="deviceNameTextField" destination="uud-Y5-kB9" id="QBw-Kr-IvW"/>
                 <outlet property="deviceView" destination="qmw-wg-baU" id="dK3-ut-Svt"/>
                 <outlet property="deviceViewTopSpaceConstraint" destination="6sC-O1-T1T" id="A57-h9-zgi"/>
@@ -40,7 +42,7 @@
                                 <constraint firstAttribute="height" constant="30" id="CCq-Eu-Gba"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             <connections>
                                 <action selector="textFieldDidEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="Xqd-T2-HMA"/>
                             </connections>

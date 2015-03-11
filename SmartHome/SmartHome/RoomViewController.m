@@ -10,6 +10,7 @@
 #import "RoomFirstLevelController.h"
 #import "Comon.h"
 #import "DeviceManageController.h"
+#import "RoomManageController.h"
 
 @interface RoomViewController ()<RoomFirstLevelDelegate>
 
@@ -61,9 +62,18 @@
 - (void)roomFirstLevelControllerAddSwitch:(RoomFirstLevelController *)aController
 {
     DeviceManageController *deviceManageController = [[DeviceManageController alloc] initWithNibName:@"DeviceManageController" bundle:nil];
+    deviceManageController.roomID = aController.roomID;
     deviceManageController.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:deviceManageController animated:YES];
+}
+
+- (void)roomFirstLevelControllerLongPress:(RoomFirstLevelController *)aController
+{
+    RoomManageController *roomManageController = [[RoomManageController alloc] initWithNibName:@"RoomManageController" bundle:nil];
+    roomManageController.hidesBottomBarWhenPushed = YES;
+//roomManageController.switchEntity =
+    [self.navigationController pushViewController:roomManageController animated:YES];
 }
 
 @end

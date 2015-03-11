@@ -11,6 +11,8 @@
 #import "Comon.h"
 #import "SwitchObject.h"
 #import "DeviceManageController.h"
+#import "AppDelegate.h"
+#import "SwitchEntity.h"
 
 #define kGridViewTag         101
 #define kColumn              3
@@ -34,6 +36,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // TODO: remove observer
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchDataFromCoreData) name:@"reloadSwitchData" object:nil];
+    
     [self setup];
     [self addTapToImageView];
 }
@@ -41,24 +46,32 @@
 #pragma mark - Private methods
 - (void)setup
 {
+    self.roomID = 100; // TODO: 记得修改roomID
     self.aTableView.backgroundColor = [UIColor purpleColor];
     self.switchArray = [NSMutableArray array];
     
-    //初始化开关格子数据, 默认有 添加设备 这个按钮
-    SwitchObject *object = [[SwitchObject alloc] init];
-    object.switchName = @"添加设备";
-    object.switchImageName = @"main_add";
-    [self.switchArray addObject:object];
+    [self fetchDataFromCoreData];
+    [self configRoomImage];
+}
+
+- (void)fetchDataFromCoreData
+{
+    [self.switchArray removeAllObjects];
     
-    /*
-    for (int i = 0; i < 20; i ++) {
-        SwitchObject *object = [[SwitchObject alloc] init];
-        object.switchName = [NSString stringWithFormat:@"开关%02d",i + 1];
-        object.switchFlag = NO;
-        
-        [self.switchArray addObject:object];
-    }
-     */
+    NSManagedObjectContext *context = APP_DELEGATE.managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"SwitchEntity"];
+    request.predicate = [NSPredicate predicateWithFormat:@"roomID == %@", [NSNumber numberWithInteger:self.roomID]];
+    
+    NSArray *switchArray = [context executeFetchRequest:request error:nil];
+    [self.switchArray addObjectsFromArray:switchArray];
+    [self.aTableView reloadData];
+}
+
+- (void)configRoomImage
+{
+    SwitchEntity *theSwitch = self.switchArray[0];
+    self.thumbnailImageView.image = [UIImage imageWithData:theSwitch.roomImageData];
 }
 
 #pragma mark - Tap image
@@ -74,8 +87,12 @@
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.allowsEditing = YES;
     picker.delegate = self;
-    //[picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    
+#if TARGET_IPHONE_SIMULATOR
     [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+#else
+    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+#endif
     
     [self presentViewController:picker animated:YES completion:nil];
 }
@@ -84,8 +101,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.thumbnailImageView.image = info[UIImagePickerControllerEditedImage];
-    // TODO: 图片数据写进数据库
     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    // 图片数据写进core data
+    for (SwitchEntity *theSwitch in self.switchArray) {
+        theSwitch.roomImageData = UIImagePNGRepresentation(self.thumbnailImageView.image);
+    }
+    [APP_DELEGATE saveContext];
 }
 
 #pragma mark - TableView dataSource && delegate
@@ -121,17 +143,18 @@
         CGFloat X = xGap + i % kColumn * (kGridWidth + xGap);
         CGFloat Y = yGap + i / kColumn * (kGridHeight + yGap);
         
-        SwitchObject *object = self.switchArray[i];
+        SwitchEntity *theSwitch = self.switchArray[i];
         
         GridView *gridView = [GridView getNibInstance];
+        gridView.delegate = self;
+        gridView.switchEntity = theSwitch;
         gridView.frame = CGRectMake(X, Y, kGridWidth, kGridHeight);
         gridView.tag = kGridViewTag + i;
-        gridView.stateLabel.text = object.switchName;
-        gridView.thumbnailImageView.image = [UIImage imageNamed:object.switchImageName];
+        gridView.stateLabel.text = theSwitch.name;
+        gridView.thumbnailImageView.image = [UIImage imageNamed:theSwitch.imageName];
         
         if (i == self.switchArray.count - 1) { // 添加设备 格子
             gridView.tag = kGridOfAddDeviceTag;
-            gridView.delegate = self;
         } else {
             
         }
@@ -146,11 +169,17 @@
 #pragma mark - GridViewDelegate
 - (void)gridViewAddSwitch:(GridView *)gridView
 {
+    // "添加设备"，委托到 RoomController 完成
     if (self.delegate && [self.delegate respondsToSelector:@selector(roomFirstLevelControllerAddSwitch:)]) {
         [self.delegate roomFirstLevelControllerAddSwitch:self];
     }
-    
 }
 
+- (void)gridViewLongPress:(GridView *)gridView
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(roomFirstLevelControllerLongPress:)]) {
+        [self.delegate roomFirstLevelControllerLongPress:self];
+    }
+}
 
 @end

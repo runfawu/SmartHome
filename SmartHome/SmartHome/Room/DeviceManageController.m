@@ -11,6 +11,7 @@
 #import "ConnectNetController.h"
 #import "DeviceAddController.h"
 #import "ScanViewController.h"
+#import "UIView+Toast.h"
 
 @interface DeviceManageController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -40,7 +41,7 @@
 #pragma mark - TableView dataSource && delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.descriptionTextArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,18 +60,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {  // 一键联网
-//        ConnectNetController *connnetController = [[ConnectNetController alloc] initWithNibName:@"ConnectNetController" bundle:nil];
-//        [self.navigationController pushViewController:connnetController animated:YES];
+    if (indexPath.row == 0) { // 设备地址配置
         DeviceAddController *deviceAddController = [[DeviceAddController alloc] initWithNibName:@"DeviceAddController" bundle:nil];
+        deviceAddController.roomID = self.roomID;
         [self.navigationController pushViewController:deviceAddController animated:YES];
         
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == 1) { // 二维码扫描
         ScanViewController *scanController = [[ScanViewController alloc] init];
         [self.navigationController pushViewController:scanController animated:YES];
-
-    } else if (indexPath.row == 2) {
         
+    } else if (indexPath.row == 2) { // 网络搜索
+        [self.aTableView makeToast:@"网络搜索，功能开发中" duration:1.2 position:@"center"];
     }
 }
 
