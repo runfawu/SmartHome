@@ -26,11 +26,11 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="99x-c6-c7g" secondAttribute="bottom" id="3L8-R1-alZ"/>
                 <constraint firstAttribute="trailing" secondItem="JvI-QF-Fa7" secondAttribute="trailing" constant="10" id="FkY-YL-gSv"/>
-                <constraint firstItem="99x-c6-c7g" firstAttribute="top" secondItem="JvI-QF-Fa7" secondAttribute="bottom" id="I1H-VE-ZKP"/>
                 <constraint firstAttribute="trailing" secondItem="99x-c6-c7g" secondAttribute="trailing" id="SMM-ZT-Sw0"/>
                 <constraint firstItem="99x-c6-c7g" firstAttribute="top" secondItem="JvI-QF-Fa7" secondAttribute="bottom" id="Sqz-z9-Rx5"/>
                 <constraint firstItem="JvI-QF-Fa7" firstAttribute="leading" secondItem="eTX-xV-kc6" secondAttribute="leading" constant="10" id="TUH-3g-C3C"/>
                 <constraint firstItem="JvI-QF-Fa7" firstAttribute="top" secondItem="eTX-xV-kc6" secondAttribute="top" constant="2" id="VpU-95-lH1"/>
+                <constraint firstAttribute="bottom" secondItem="JvI-QF-Fa7" secondAttribute="bottom" constant="18" id="Vxt-6x-TOD"/>
                 <constraint firstItem="99x-c6-c7g" firstAttribute="leading" secondItem="eTX-xV-kc6" secondAttribute="leading" id="pje-Sh-0S7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

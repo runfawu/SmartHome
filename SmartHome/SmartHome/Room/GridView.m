@@ -60,9 +60,9 @@
     NSString *imageName = onOffFlag ? @"switch_on": @"switch_off";
     self.thumbnailImageView.image = [UIImage imageNamed:imageName];
     
-    // 保存状态到 core data
-    self.switchEntity.imageName = imageName;
-    [APP_DELEGATE saveContext];
+//    // 保存状态到 core data
+//    self.switchEntity.imageName = imageName;
+//    [APP_DELEGATE saveContext];
 }
 
 @end

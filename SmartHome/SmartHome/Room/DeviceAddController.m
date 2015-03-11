@@ -119,8 +119,12 @@
                 NSLog(@"写入device表失败");
             }else{
                 //添加设备成功，发送通知涮新roomFirst界面
+                [self.view makeToast:@"已保存" duration:1 position:@"center"];
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:ADDLIGHTSUCCESSNOTIFICATION object:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:ADDLIGHTSUCCESSNOTIFICATION object:nil];
+                });
             }
         }
     }else if ([self.codeTextField.text hasPrefix:@"05"]){
@@ -158,7 +162,12 @@
             {
                 NSLog(@"写入device表失败");
             }else{
-                [[NSNotificationCenter defaultCenter] postNotificationName:ADDSOCKETSUCCESSNOTIFICATION object:nil];
+                [self.view makeToast:@"已保存" duration:1 position:@"center"];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:ADDSOCKETSUCCESSNOTIFICATION object:nil];
+                });
             }
         }
     }
