@@ -43,10 +43,18 @@
     [self addTapToImageView];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.roomImageData = UIImagePNGRepresentation(self.thumbnailImageView.image);
+    NSParameterAssert(self.roomImageData.length != 0);
+}
+
 #pragma mark - Private methods
 - (void)setup
 {
     self.roomID = 100; // TODO: 记得修改roomID
+    //self.roomImageData = UIImagePNGRepresentation(self.thumbnailImageView.image);
     self.aTableView.backgroundColor = [UIColor purpleColor];
     self.switchArray = [NSMutableArray array];
     
@@ -102,6 +110,9 @@
 {
     self.thumbnailImageView.image = info[UIImagePickerControllerEditedImage];
     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    // 传给下一级、下下一级添加switch的roomImageData数据
+    self.roomImageData = UIImagePNGRepresentation(self.thumbnailImageView.image);
     
     // 图片数据写进core data
     for (SwitchEntity *theSwitch in self.switchArray) {
@@ -171,6 +182,7 @@
 {
     // "添加设备"，委托到 RoomController 完成
     if (self.delegate && [self.delegate respondsToSelector:@selector(roomFirstLevelControllerAddSwitch:)]) {
+        NSParameterAssert(self.roomImageData != 0);
         [self.delegate roomFirstLevelControllerAddSwitch:self];
     }
 }

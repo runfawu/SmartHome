@@ -11,5 +11,6 @@
 @interface DeviceManageController : UIViewController
 
 @property (nonatomic, assign) NSInteger roomID;
+@property (nonatomic, copy) NSData *roomImageData;
 
 @end

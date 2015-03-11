@@ -63,6 +63,7 @@
     if (indexPath.row == 0) { // 设备地址配置
         DeviceAddController *deviceAddController = [[DeviceAddController alloc] initWithNibName:@"DeviceAddController" bundle:nil];
         deviceAddController.roomID = self.roomID;
+        deviceAddController.roomImageData = self.roomImageData;
         [self.navigationController pushViewController:deviceAddController animated:YES];
         
     } else if (indexPath.row == 1) { // 二维码扫描

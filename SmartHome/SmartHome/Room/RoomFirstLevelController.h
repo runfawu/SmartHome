@@ -20,5 +20,6 @@
 
 @property (nonatomic, weak) id<RoomFirstLevelDelegate> delegate;
 @property (nonatomic, assign) NSInteger roomID;
+@property (nonatomic, copy) NSData *roomImageData;
 
 @end

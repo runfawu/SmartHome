@@ -113,7 +113,8 @@
     newSwitch.type = [self.codeTextField.text hasPrefix:@"05"] ? SWITCH_TYPE_SOCKET: SWITCH_TYPE_LIGHT;
     newSwitch.imageName = kSwitchOffImageName;
     newSwitch.code = self.codeTextField.text;
-    newSwitch.roomImageData = UIImagePNGRepresentation([UIImage imageNamed:@"Account_Cloud"]); // 可能有问题
+    NSParameterAssert(self.roomImageData.length != 0);
+    newSwitch.roomImageData = self.roomImageData; 
     
     [APP_DELEGATE saveContext];
     [APP_DELEGATE createAddButtonWithRoomID:self.roomID];

@@ -63,6 +63,7 @@
 {
     DeviceManageController *deviceManageController = [[DeviceManageController alloc] initWithNibName:@"DeviceManageController" bundle:nil];
     deviceManageController.roomID = aController.roomID;
+    deviceManageController.roomImageData = aController.roomImageData;
     deviceManageController.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:deviceManageController animated:YES];
